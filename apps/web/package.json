@@ -1,0 +1,16 @@
+{
+	"name": "@workspace/web",
+	"type": "module",
+	"scripts": {
+		"dev": "bunx --bun vite dev",
+		"build": "bunx --bun vite build"
+	},
+	"dependencies": {
+		"@workspace/api": "workspace:*",
+		"@workspace/auth": "workspace:*",
+		"@workspace/ui": "workspace:*"
+	},
+	"devDependencies": {
+		"@workspace/config": "workspace:*"
+	}
+}

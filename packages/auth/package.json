@@ -1,0 +1,15 @@
+{
+	"name": "@workspace/auth",
+	"exports": {
+		".": {
+			"default": "./src/index.ts"
+		}
+	},
+	"type": "module",
+	"dependencies": {
+		"@workspace/db": "workspace:*"
+	},
+	"devDependencies": {
+		"@workspace/config": "workspace:*"
+	}
+}

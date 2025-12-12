@@ -1,0 +1,50 @@
+{
+	// --------------------------------------------------
+	// Default configuration
+	// --------------------------------------------------
+
+	"editor.formatOnPaste": false,
+	"editor.formatOnSave": true,
+	"editor.codeActionsOnSave": {
+		"source.fixAll.biome": "always",
+		"source.organizeImports.biome": "always"
+	},
+
+	"files.associations": {
+		"*.css": "tailwindcss"
+	},
+
+	// Disable Built-in formatters
+	"css.format.enable": false,
+	"javascript.format.enable": false,
+	"json.format.enable": false,
+	"typescript.format.enable": false,
+
+	// --------------------------------------------------
+	// Language specific configurations
+	// --------------------------------------------------
+
+	"[css][tailwindcss]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+
+	"[javascript][javascriptreact]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+
+	"[json][jsonc]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+
+	"[typescript][typescriptreact]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+
+	// --------------------------------------------------
+	// Plugin specific configurations
+	// --------------------------------------------------
+
+	"cSpell.words": ["tanstack", "vite"],
+
+	"tailwindCSS.classFunctions": ["cn", "cx", "tv"]
+}

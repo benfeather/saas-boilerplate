@@ -1,0 +1,16 @@
+{
+	"name": "server",
+	"main": "src/index.ts",
+	"type": "module",
+	"scripts": {
+		"build": "bun build src/index.ts --outdir dist",
+		"dev": "bun run --hot src/index.ts"
+	},
+	"dependencies": {
+		"@workspace/api": "workspace:*",
+		"@workspace/auth": "workspace:*"
+	},
+	"devDependencies": {
+		"@workspace/config": "workspace:*"
+	}
+}

@@ -1,0 +1,19 @@
+{
+	"name": "@workspace/api",
+	"exports": {
+		".": {
+			"default": "./src/index.ts"
+		},
+		"./*": {
+			"default": "./src/*.ts"
+		}
+	},
+	"type": "module",
+	"dependencies": {
+		"@workspace/auth": "workspace:*",
+		"@workspace/db": "workspace:*"
+	},
+	"devDependencies": {
+		"@workspace/config": "workspace:*"
+	}
+}

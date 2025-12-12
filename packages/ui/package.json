@@ -1,0 +1,22 @@
+{
+	"name": "@workspace/ui",
+	"type": "module",
+	"version": "1.0.0",
+	"exports": {
+		"./components/*": {
+			"default": "./src/components/*.tsx"
+		},
+		"./hooks/*": {
+			"default": "./src/hooks/*.ts"
+		},
+		"./styles/*": {
+			"default": "./src/styles/*.css"
+		},
+		"./utils/*": {
+			"default": "./src/utils/*.ts"
+		}
+	},
+	"devDependencies": {
+		"@workspace/config": "workspace:*"
+	}
+}
