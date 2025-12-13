@@ -15,7 +15,6 @@ function RouteComponent() {
 
       <div className="mt-4 text-center">
         <Button
-          asChild={true}
           variant="link"
           className="text-indigo-600 hover:text-indigo-800"
         >

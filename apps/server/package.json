@@ -1,5 +1,5 @@
 {
-	"name": "server",
+	"name": "@workspace/server",
 	"main": "src/index.ts",
 	"type": "module",
 	"scripts": {

@@ -1,0 +1,24 @@
+{
+	"$schema": "https://ui.shadcn.com/schema.json",
+	"style": "base-vega",
+	"rsc": false,
+	"tsx": true,
+	"tailwind": {
+		"config": "",
+		"css": "./packages/ui/src/styles/theme.css",
+		"baseColor": "zinc",
+		"cssVariables": true,
+		"prefix": ""
+	},
+	"iconLibrary": "tabler",
+	"aliases": {
+		"components": "@workspace/ui/src/components",
+		"hooks": "@workspace/ui/src/hooks",
+		"lib": "@workspace/ui/src/lib",
+		"ui": "@workspace/ui/src/components",
+		"utils": "@workspace/ui/src/lib/utils"
+	},
+	"menuColor": "default",
+	"menuAccent": "subtle",
+	"registries": {}
+}

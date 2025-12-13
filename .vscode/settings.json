@@ -44,7 +44,15 @@
 	// Plugin specific configurations
 	// --------------------------------------------------
 
-	"cSpell.words": ["tanstack", "vite"],
+	"cSpell.words": [
+		"bunx",
+		"fontsource",
+		"iconify",
+		"shadcn",
+		"tabler",
+		"tanstack",
+		"vite"
+	],
 
 	"tailwindCSS.classFunctions": ["cn", "cx", "tv"]
 }

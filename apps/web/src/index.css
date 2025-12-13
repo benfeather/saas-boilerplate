@@ -1,5 +1,1 @@
-@import "tailwindcss";
-
 @import "@workspace/ui/styles/theme";
-
-@source "@workspace/ui/components/*.tsx";

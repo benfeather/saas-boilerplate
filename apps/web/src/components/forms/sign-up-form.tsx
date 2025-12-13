@@ -135,6 +135,7 @@ export default function SignUpForm() {
         {(state) => (
           <Button
             type="submit"
+            variant="default"
             className="w-full"
             disabled={!state.canSubmit || state.isSubmitting}
           >
