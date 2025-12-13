@@ -1,0 +1,18 @@
+{
+	"name": "@workspace/email",
+	"exports": {
+		".": {
+			"default": "./src/index.ts"
+		},
+		"./*": {
+			"default": "./src/*.{ts,tsx}"
+		}
+	},
+	"type": "module",
+	"scripts": {
+		"dev": "email dev --dir='./src/templates' --port=4000"
+	},
+	"devDependencies": {
+		"@workspace/config": "workspace:*"
+	}
+}

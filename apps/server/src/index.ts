@@ -5,6 +5,13 @@ import { auth } from '@workspace/auth'
 import { Hono } from 'hono'
 import { cors } from 'hono/cors'
 import { logger } from 'hono/logger'
+import { z } from 'zod'
+
+const env = z
+  .object({
+    CORS_ORIGIN: z.string().min(1, 'CORS origin is required'),
+  })
+  .parse(process.env)
 
 const app = new Hono()
 
@@ -16,7 +23,7 @@ app.use(
     allowMethods: ['GET', 'POST', 'OPTIONS'],
     allowHeaders: ['Content-Type', 'Authorization'],
     credentials: true,
-    origin: process.env.CORS_ORIGIN || '',
+    origin: env.CORS_ORIGIN.split(','),
   }),
 )
 
@@ -28,7 +35,7 @@ app.use(
   }),
 )
 
-app.on(['POST', 'GET'], '/api/auth/*', (c) => auth.handler(c.req.raw))
+app.on(['GET', 'POST'], '/api/auth/*', (c) => auth.handler(c.req.raw))
 
 app.get('/', (c) => c.text('OK'))
 

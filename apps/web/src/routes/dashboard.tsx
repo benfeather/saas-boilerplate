@@ -9,16 +9,16 @@ import { useTRPC } from '@/lib/trpc'
 export const Route = createFileRoute('/dashboard')({
   component: RouteComponent,
   beforeLoad: async () => {
-    const session = await getUser()
-    const customerState = await getPayment()
-    return { session, customerState }
-  },
-  loader: async ({ context }) => {
-    if (!context.session) {
-      throw redirect({
-        to: '/login',
-      })
+    const [session, customerState] = await Promise.all([
+      getUser(),
+      getPayment(),
+    ])
+
+    if (!session) {
+      throw redirect({ to: '/login' })
     }
+
+    return { session, customerState }
   },
 })
 
@@ -30,7 +30,6 @@ function RouteComponent() {
 
   const hasProSubscription =
     (customerState?.activeSubscriptions?.length ?? 0) > 0
-  // For debugging: console.log("Active subscriptions:", customerState?.activeSubscriptions);
 
   return (
     <div>
@@ -38,23 +37,22 @@ function RouteComponent() {
       <p>Welcome {session?.user.name}</p>
       <p>API: {privateData.data?.message}</p>
       <p>Plan: {hasProSubscription ? 'Pro' : 'Free'}</p>
-      {hasProSubscription ? (
-        <Button
-          onClick={async function handlePortal() {
-            await authClient.customer.portal()
-          }}
-        >
-          Manage Subscription
-        </Button>
-      ) : (
-        <Button
-          onClick={async function handleUpgrade() {
-            await authClient.checkout({ slug: 'pro' })
-          }}
-        >
-          Upgrade to Pro
-        </Button>
-      )}
+      <Button
+        variant="outline"
+        onClick={async function handlePortal() {
+          await authClient.customer.portal()
+        }}
+      >
+        Manage Subscription
+      </Button>
+      <Button
+        variant="outline"
+        onClick={async function handleUpgrade() {
+          await authClient.checkout({ slug: 'pro' })
+        }}
+      >
+        Upgrade to Pro
+      </Button>
     </div>
   )
 }

@@ -5,9 +5,18 @@ import * as schema from '@workspace/db/schema/auth'
 import { betterAuth } from 'better-auth'
 import { drizzleAdapter } from 'better-auth/adapters/drizzle'
 import { admin } from 'better-auth/plugins'
+import { z } from 'zod'
+
+const env = z
+  .object({
+    CORS_ORIGIN: z.url().min(1, 'CORS origin is required'),
+    POLAR_ACCESS_TOKEN: z.string().min(1, 'Polar access token is required'),
+    POLAR_SUCCESS_URL: z.string().min(1, 'Polar success URL is required'),
+  })
+  .parse(process.env)
 
 const polarClient = new Polar({
-  accessToken: process.env.POLAR_ACCESS_TOKEN,
+  accessToken: env.POLAR_ACCESS_TOKEN,
   server: 'sandbox',
 })
 
@@ -37,17 +46,17 @@ export const auth = betterAuth({
           authenticatedUsersOnly: true,
           products: [
             {
-              productId: '1a72aa77-590b-4154-9459-f2d41ddda646',
+              productId: '7c02e5d9-98cc-4d3d-a872-ce2122a339e2',
               slug: 'pro',
             },
           ],
-          successUrl: process.env.POLAR_SUCCESS_URL,
+          successUrl: env.POLAR_SUCCESS_URL,
         }),
         portal(),
       ],
     }),
   ],
-  trustedOrigins: [process.env.CORS_ORIGIN || ''],
+  trustedOrigins: env.CORS_ORIGIN.split(','),
   user: {
     deleteUser: {
       enabled: true,
