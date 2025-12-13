@@ -1,11 +1,11 @@
 {
 	"name": "@workspace/email",
 	"exports": {
-		".": {
-			"default": "./src/index.ts"
+		"./lib/*": {
+			"default": "./src/lib/*.ts"
 		},
-		"./*": {
-			"default": "./src/*.{ts,tsx}"
+		"./templates/*": {
+			"default": "./src/templates/*.tsx"
 		}
 	},
 	"type": "module",

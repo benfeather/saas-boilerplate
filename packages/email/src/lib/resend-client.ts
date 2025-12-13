@@ -1,3 +1,5 @@
+import { log } from 'console'
+import type { JSX } from 'react/jsx-runtime'
 import { Resend } from 'resend'
 import { z } from 'zod'
 
@@ -8,21 +10,25 @@ const env = z
   })
   .parse(process.env)
 
-const resend = new Resend(env.RESEND_API_KEY)
+export const resendClient = new Resend(env.RESEND_API_KEY)
 
 export async function sendEmail({
   to,
   subject,
-  html,
+  component,
 }: {
   to: string
   subject: string
-  html: string
+  component: JSX.Element
 }) {
-  await resend.emails.send({
+  const res = await resendClient.emails.send({
     from: env.RESEND_FROM_EMAIL,
     to,
     subject,
-    html,
+    react: component,
   })
+
+  log('Email sent:', res)
+
+  return res
 }

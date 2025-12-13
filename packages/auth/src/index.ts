@@ -2,6 +2,9 @@ import { checkout, polar, portal } from '@polar-sh/better-auth'
 import { Polar } from '@polar-sh/sdk'
 import { db } from '@workspace/db'
 import * as schema from '@workspace/db/schema/auth'
+import { sendEmail } from '@workspace/email/lib/resend-client'
+import { PasswordReset } from '@workspace/email/templates/password-reset'
+import { VerifyEmail } from '@workspace/email/templates/verify-email'
 import { betterAuth } from 'better-auth'
 import { drizzleAdapter } from 'better-auth/adapters/drizzle'
 import { admin } from 'better-auth/plugins'
@@ -12,6 +15,7 @@ const env = z
     CORS_ORIGIN: z.url().min(1, 'CORS origin is required'),
     POLAR_ACCESS_TOKEN: z.string().min(1, 'Polar access token is required'),
     POLAR_SUCCESS_URL: z.string().min(1, 'Polar success URL is required'),
+    RESEND_FROM_EMAIL: z.email('Valid from email is required'),
   })
   .parse(process.env)
 
@@ -34,6 +38,31 @@ export const auth = betterAuth({
   }),
   emailAndPassword: {
     enabled: true,
+    requireEmailVerification: true,
+    sendResetPassword: async ({ user, url, token }, request) => {
+      void sendEmail({
+        to: user.email,
+        subject: 'Reset your password',
+        component: PasswordReset({
+          name: user.name,
+          url,
+        }),
+      })
+    },
+  },
+  emailVerification: {
+    autoSignInAfterVerification: true,
+    sendOnSignUp: true,
+    sendVerificationEmail: async ({ user, url, token }, request) => {
+      void sendEmail({
+        to: user.email,
+        subject: 'Verify your email address',
+        component: VerifyEmail({
+          name: user.name,
+          url,
+        }),
+      })
+    },
   },
   plugins: [
     admin(),

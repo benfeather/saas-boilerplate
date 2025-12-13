@@ -90,6 +90,7 @@
       "name": "@workspace/auth",
       "dependencies": {
         "@workspace/db": "workspace:*",
+        "@workspace/email": "workspace:*",
       },
       "devDependencies": {
         "@workspace/config": "workspace:*",
