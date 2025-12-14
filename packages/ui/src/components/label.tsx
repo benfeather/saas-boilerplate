@@ -3,6 +3,7 @@ import { cn } from 'tailwind-variants'
 
 function Label({ className, ...props }: React.ComponentProps<'label'>) {
   return (
+    // biome-ignore lint/a11y/noLabelWithoutControl: Shadcn UI defaults
     <label
       data-slot="label"
       className={cn(

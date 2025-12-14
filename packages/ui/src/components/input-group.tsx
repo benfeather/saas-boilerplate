@@ -6,6 +6,7 @@ import { Textarea } from './textarea'
 
 function InputGroup({ className, ...props }: React.ComponentProps<'div'>) {
   return (
+    // biome-ignore lint/a11y/useSemanticElements: Shadcn UI defaults
     <div
       data-slot="input-group"
       role="group"
@@ -43,6 +44,7 @@ function InputGroupAddon({
   ...props
 }: React.ComponentProps<'div'> & VariantProps<typeof inputGroupAddonVariants>) {
   return (
+    // biome-ignore lint/a11y/useSemanticElements lint/a11y/useKeyWithClickEvents: Shadcn UI defaults
     <div
       role="group"
       data-slot="input-group-addon"
@@ -59,23 +61,20 @@ function InputGroupAddon({
   )
 }
 
-const inputGroupButtonVariants = cva(
-  'gap-2 text-sm shadow-none flex items-center',
-  {
-    variants: {
-      size: {
-        xs: "h-6 gap-1 rounded-[calc(var(--radius)-5px)] px-1.5 [&>svg:not([class*='size-'])]:size-3.5",
-        sm: '',
-        'icon-xs':
-          'size-6 rounded-[calc(var(--radius)-5px)] p-0 has-[>svg]:p-0',
-        'icon-sm': 'size-8 p-0 has-[>svg]:p-0',
-      },
-    },
-    defaultVariants: {
-      size: 'xs',
+const inputGroupButtonVariants = tv({
+  base: 'flex items-center gap-2 text-sm shadow-none',
+  variants: {
+    size: {
+      xs: "h-6 gap-1 rounded-[calc(var(--radius)-5px)] px-1.5 [&>svg:not([class*='size-'])]:size-3.5",
+      sm: '',
+      'icon-xs': 'size-6 rounded-[calc(var(--radius)-5px)] p-0 has-[>svg]:p-0',
+      'icon-sm': 'size-8 p-0 has-[>svg]:p-0',
     },
   },
-)
+  defaultVariants: {
+    size: 'xs',
+  },
+})
 
 function InputGroupButton({
   className,
