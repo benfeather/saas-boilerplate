@@ -1,4 +1,10 @@
 import { Link } from '@tanstack/react-router'
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+} from '@workspace/ui/components/navigation-menu'
 import { ThemeToggle } from '@/components/theme-toggle'
 
 export default function Header() {
@@ -8,20 +14,19 @@ export default function Header() {
   ]
 
   return (
-    <div>
-      <div className="flex flex-row items-center justify-between px-2 py-1">
-        <nav className="flex gap-4 text-lg">
-          {links.map(({ to, label }) => {
-            return (
-              <Link key={to} to={to}>
-                {label}
-              </Link>
-            )
-          })}
-        </nav>
+    <NavigationMenu className="w-full border-b bg-background/80 backdrop-blur-sm">
+      <NavigationMenuList>
+        {links.map(({ to, label }) => (
+          <NavigationMenuItem key={to}>
+            <NavigationMenuLink render={<Link to={to} />}>
+              {label}
+            </NavigationMenuLink>
+          </NavigationMenuItem>
+        ))}
+      </NavigationMenuList>
+      <div className="mr-2 ml-auto">
         <ThemeToggle />
       </div>
-      <hr />
-    </div>
+    </NavigationMenu>
   )
 }

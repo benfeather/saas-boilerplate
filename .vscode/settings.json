@@ -54,5 +54,6 @@
 		"vite"
 	],
 
-	"tailwindCSS.classFunctions": ["cn", "cx", "tv"]
+	"tailwindCSS.classFunctions": ["cn", "cnMerge", "cx", "tv"],
+	"tailwindCSS.colorDecorators": true
 }

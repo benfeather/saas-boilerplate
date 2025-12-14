@@ -1,6 +1,5 @@
 import { QueryClientProvider } from '@tanstack/react-query'
 import { createRouter } from '@tanstack/react-router'
-import { ThemeProvider } from 'next-themes'
 import { queryClient } from '@/lib/query-client'
 import { TRPCProvider, trpc, trpcClient } from '@/lib/trpc'
 import { routeTree } from './routeTree.gen'
@@ -18,9 +17,7 @@ export const getRouter = () => {
     Wrap: ({ children }) => (
       <QueryClientProvider client={queryClient}>
         <TRPCProvider trpcClient={trpcClient} queryClient={queryClient}>
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            {children}
-          </ThemeProvider>
+          {children}
         </TRPCProvider>
       </QueryClientProvider>
     ),
