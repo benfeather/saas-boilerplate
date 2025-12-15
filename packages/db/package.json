@@ -15,7 +15,7 @@
 		"db:generate": "drizzle-kit generate",
 		"db:migrate": "drizzle-kit migrate"
 	},
-	"devDependencies": {
+	"dependencies": {
 		"@workspace/config": "workspace:*"
 	}
 }

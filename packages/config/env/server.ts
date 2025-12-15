@@ -30,6 +30,7 @@ export const env = createEnv({
     POLAR_SUCCESS_URL: z.string().min(1),
     RESEND_API_KEY: z.string().min(1),
     RESEND_FROM_EMAIL: z.email(),
+    ADMIN_PORT: z.coerce.number(),
     SERVER_PORT: z.coerce.number(),
     WEB_PORT: z.coerce.number(),
   },

@@ -1,7 +1,5 @@
 import { useQuery } from '@tanstack/react-query'
 import { createFileRoute, redirect } from '@tanstack/react-router'
-import { Button } from '@workspace/ui/components/button'
-import { authClient } from '@workspace/ui/lib/auth-client'
 import { useTRPC } from '@workspace/ui/lib/trpc'
 import { getPayment } from '@/functions/get-payment'
 import { getUser } from '@/functions/get-user'
@@ -14,7 +12,7 @@ export const Route = createFileRoute('/dashboard')({
       getPayment(),
     ])
 
-    if (!session) {
+    if (!session || !customerState) {
       throw redirect({ to: '/login' })
     }
 
@@ -28,31 +26,11 @@ function RouteComponent() {
   const trpc = useTRPC()
   const privateData = useQuery(trpc.privateData.queryOptions())
 
-  const hasProSubscription =
-    (customerState?.activeSubscriptions?.length ?? 0) > 0
-
   return (
     <div>
       <h1>Dashboard</h1>
       <p>Welcome {session?.user.name}</p>
       <p>API: {privateData.data?.message}</p>
-      <p>Plan: {hasProSubscription ? 'Pro' : 'Free'}</p>
-      <Button
-        variant="outline"
-        onClick={async function handlePortal() {
-          await authClient.customer.portal()
-        }}
-      >
-        Manage Subscription
-      </Button>
-      <Button
-        variant="outline"
-        onClick={async function handleUpgrade() {
-          await authClient.checkout({ slug: 'pro' })
-        }}
-      >
-        Upgrade to Pro
-      </Button>
     </div>
   )
 }

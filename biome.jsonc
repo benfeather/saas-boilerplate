@@ -29,6 +29,7 @@
 			"recommended": true,
 			"correctness": {
 				"noUnusedFunctionParameters": "off",
+				"noUnusedVariables": "off",
 				"useExhaustiveDependencies": "info"
 			},
 			"nursery": {

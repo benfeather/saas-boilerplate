@@ -9,6 +9,9 @@
 		"./hooks/*": {
 			"default": "./src/hooks/*.ts"
 		},
+		"./lib/*": {
+			"default": "./src/lib/*.ts"
+		},
 		"./styles/*": {
 			"default": "./src/styles/*.css"
 		},
@@ -16,7 +19,8 @@
 			"default": "./src/utils/*.ts"
 		}
 	},
-	"devDependencies": {
+	"dependencies": {
+		"@workspace/api": "workspace:*",
 		"@workspace/config": "workspace:*"
 	}
 }

@@ -12,7 +12,7 @@
 	"scripts": {
 		"dev": "email dev --dir='./src/templates' --port=4000"
 	},
-	"devDependencies": {
+	"dependencies": {
 		"@workspace/config": "workspace:*"
 	}
 }
