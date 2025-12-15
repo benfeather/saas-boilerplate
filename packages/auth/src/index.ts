@@ -12,7 +12,7 @@ import { admin } from 'better-auth/plugins'
 
 const polarClient = new Polar({
   accessToken: env.POLAR_ACCESS_TOKEN,
-  server: 'sandbox',
+  server: env.POLAR_ENV,
 })
 
 export const auth = betterAuth({
@@ -71,6 +71,7 @@ export const auth = betterAuth({
             },
           ],
           successUrl: env.POLAR_SUCCESS_URL,
+          returnUrl: env.POLAR_RETURN_URL,
         }),
         portal(),
       ],
