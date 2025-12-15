@@ -1,6 +1,6 @@
 import { Dialog as SheetPrimitive } from '@base-ui/react/dialog'
 import { Icon } from '@iconify/react'
-import { Button } from '@workspace/ui/components/button'
+import { Button } from '@workspace/common/ui/button'
 import type * as React from 'react'
 import { cn } from 'tailwind-variants'
 

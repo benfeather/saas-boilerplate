@@ -1,8 +1,8 @@
 import { useQuery } from '@tanstack/react-query'
 import { createFileRoute, redirect } from '@tanstack/react-router'
-import { Button } from '@workspace/ui/components/button'
-import { authClient } from '@workspace/ui/lib/auth-client'
-import { useTRPC } from '@workspace/ui/lib/trpc'
+import { authClient } from '@workspace/common/lib/auth-client'
+import { useTRPC } from '@workspace/common/lib/trpc'
+import { Button } from '@workspace/common/ui/button'
 import { getPayment } from '@/functions/get-payment'
 import { getUser } from '@/functions/get-user'
 

@@ -5,6 +5,7 @@
 @custom-variant dark (&:is(.dark *));
 
 @source "../components/*.tsx";
+@source "../ui/*.tsx";
 
 :root {
 	--background: oklch(1 0 0);

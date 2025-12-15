@@ -4,8 +4,8 @@ import {
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-} from '@workspace/ui/components/navigation-menu'
-import { ThemeToggle } from '@workspace/ui/components/theme-toggle'
+} from '@workspace/common/ui/navigation-menu'
+import { ThemeToggle } from '@workspace/common/ui/theme-toggle'
 
 export default function Header() {
   const links = [

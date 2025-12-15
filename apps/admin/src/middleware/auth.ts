@@ -1,5 +1,5 @@
 import { createMiddleware } from '@tanstack/react-start'
-import { authClient } from '@workspace/ui/lib/auth-client'
+import { authClient } from '@workspace/common/lib/auth-client'
 
 export const authMiddleware = createMiddleware().server(
   async ({ next, request }) => {
@@ -9,6 +9,14 @@ export const authMiddleware = createMiddleware().server(
         throw: true,
       },
     })
+
+    if (!session?.user) {
+      throw new Response('Unauthorized', { status: 401 })
+    }
+
+    if (session.user.role !== 'admin') {
+      throw new Response('Forbidden', { status: 403 })
+    }
 
     return next({
       context: { session },

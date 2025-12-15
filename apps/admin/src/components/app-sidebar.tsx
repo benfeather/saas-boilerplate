@@ -4,7 +4,7 @@ import {
   SidebarFooter,
   SidebarGroup,
   SidebarHeader,
-} from '@workspace/ui/components/sidebar'
+} from '@workspace/common/ui/sidebar'
 
 export default function AppSidebar() {
   return (

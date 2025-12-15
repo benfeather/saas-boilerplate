@@ -1,5 +1,5 @@
 import { Icon } from '@iconify/react'
-import { Button } from '@workspace/ui/components/button'
+import { Button } from '@workspace/common/ui/button'
 import { useTheme } from 'next-themes'
 
 export function ThemeToggle() {

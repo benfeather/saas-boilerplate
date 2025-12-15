@@ -1,23 +1,23 @@
 import { mergeProps } from '@base-ui/react/merge-props'
 import { useRender } from '@base-ui/react/use-render'
 import { Icon } from '@iconify/react'
-import { Button } from '@workspace/ui/components/button'
-import { Input } from '@workspace/ui/components/input'
-import { Separator } from '@workspace/ui/components/separator'
+import { useIsMobile } from '@workspace/common/hooks/use-mobile'
+import { Button } from '@workspace/common/ui/button'
+import { Input } from '@workspace/common/ui/input'
+import { Separator } from '@workspace/common/ui/separator'
 import {
   Sheet,
   SheetContent,
   SheetDescription,
   SheetHeader,
   SheetTitle,
-} from '@workspace/ui/components/sheet'
-import { Skeleton } from '@workspace/ui/components/skeleton'
+} from '@workspace/common/ui/sheet'
+import { Skeleton } from '@workspace/common/ui/skeleton'
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from '@workspace/ui/components/tooltip'
-import { useIsMobile } from '@workspace/ui/hooks/use-mobile'
+} from '@workspace/common/ui/tooltip'
 import * as React from 'react'
 import { cn, tv, type VariantProps } from 'tailwind-variants'
 

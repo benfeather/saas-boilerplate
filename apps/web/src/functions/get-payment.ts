@@ -1,6 +1,6 @@
 import { createServerFn } from '@tanstack/react-start'
 import { getRequestHeaders } from '@tanstack/react-start/server'
-import { authClient } from '@workspace/ui/lib/auth-client'
+import { authClient } from '@workspace/common/lib/auth-client'
 import { authMiddleware } from '@/middleware/auth'
 
 export const getPayment = createServerFn({ method: 'GET' })

@@ -1,12 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@workspace/ui/components/card'
-import SignInForm from '@/components/forms/sign-in-form'
+import { LoginForm } from '@workspace/common/components/login-form'
 
 export const Route = createFileRoute('/')({
   component: RouteComponent,
@@ -15,17 +8,7 @@ export const Route = createFileRoute('/')({
 function RouteComponent() {
   return (
     <div className="mx-auto mt-10 w-full max-w-md p-6">
-      <Card>
-        <CardHeader>
-          <CardTitle>Log In</CardTitle>
-          <CardDescription>
-            Please enter your credentials to access your account.
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <SignInForm />
-        </CardContent>
-      </Card>
+      <LoginForm />
     </div>
   )
 }

@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
-import { Button } from '@workspace/ui/components/button'
+import { Button } from '@workspace/common/ui/button'
 import SignInForm from '@/components/forms/sign-in-form'
 
 export const Route = createFileRoute('/login')({

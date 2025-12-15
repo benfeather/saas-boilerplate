@@ -1,27 +1,23 @@
 import { useQuery } from '@tanstack/react-query'
 import { createFileRoute, redirect } from '@tanstack/react-router'
-import { useTRPC } from '@workspace/ui/lib/trpc'
-import { getPayment } from '@/functions/get-payment'
+import { useTRPC } from '@workspace/common/lib/trpc'
 import { getUser } from '@/functions/get-user'
 
 export const Route = createFileRoute('/dashboard')({
   component: RouteComponent,
   loader: async () => {
-    const [session, customerState] = await Promise.all([
-      getUser(),
-      getPayment(),
-    ])
+    const [session] = await Promise.all([getUser()])
 
-    if (!session || !customerState) {
+    if (!session) {
       throw redirect({ to: '/' })
     }
 
-    return { session, customerState }
+    return { session }
   },
 })
 
 function RouteComponent() {
-  const { session, customerState } = Route.useLoaderData()
+  const { session } = Route.useLoaderData()
 
   const trpc = useTRPC()
   const privateData = useQuery(trpc.privateData.queryOptions())

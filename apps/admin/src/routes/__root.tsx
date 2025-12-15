@@ -11,10 +11,7 @@ import {
 import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 import type { TRPCOptionsProxy } from '@trpc/tanstack-react-query'
 import type { AppRouter } from '@workspace/api/router/index'
-import {
-  SidebarProvider,
-  SidebarTrigger,
-} from '@workspace/ui/components/sidebar'
+import { SidebarProvider, SidebarTrigger } from '@workspace/common/ui/sidebar'
 import { ThemeProvider } from 'next-themes'
 import AppSidebar from '@/components/app-sidebar'
 import css from '../index.css?url'
