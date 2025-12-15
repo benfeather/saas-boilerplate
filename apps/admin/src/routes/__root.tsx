@@ -11,8 +11,12 @@ import {
 import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 import type { TRPCOptionsProxy } from '@trpc/tanstack-react-query'
 import type { AppRouter } from '@workspace/api/router/index'
+import {
+  SidebarProvider,
+  SidebarTrigger,
+} from '@workspace/ui/components/sidebar'
 import { ThemeProvider } from 'next-themes'
-import Header from '@/components/header'
+import AppSidebar from '@/components/app-sidebar'
 import css from '../index.css?url'
 
 export interface RouterAppContext {
@@ -52,10 +56,14 @@ function RootDocument() {
       </head>
       <body>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <div>
-            <Header />
-            <Outlet />
-          </div>
+          <SidebarProvider>
+            <AppSidebar />
+
+            <main className="flex-1">
+              <SidebarTrigger />
+              <Outlet />
+            </main>
+          </SidebarProvider>
         </ThemeProvider>
 
         <TanStackDevtools

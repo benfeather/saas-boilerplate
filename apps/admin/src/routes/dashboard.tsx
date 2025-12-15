@@ -13,7 +13,7 @@ export const Route = createFileRoute('/dashboard')({
     ])
 
     if (!session || !customerState) {
-      throw redirect({ to: '/login' })
+      throw redirect({ to: '/' })
     }
 
     return { session, customerState }
