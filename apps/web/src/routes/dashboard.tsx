@@ -8,7 +8,7 @@ import { useTRPC } from '@/lib/trpc'
 
 export const Route = createFileRoute('/dashboard')({
   component: RouteComponent,
-  beforeLoad: async () => {
+  loader: async () => {
     const [session, customerState] = await Promise.all([
       getUser(),
       getPayment(),
@@ -23,7 +23,7 @@ export const Route = createFileRoute('/dashboard')({
 })
 
 function RouteComponent() {
-  const { session, customerState } = Route.useRouteContext()
+  const { session, customerState } = Route.useLoaderData()
 
   const trpc = useTRPC()
   const privateData = useQuery(trpc.privateData.queryOptions())

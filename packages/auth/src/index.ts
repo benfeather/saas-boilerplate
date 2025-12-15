@@ -1,5 +1,6 @@
 import { checkout, polar, portal } from '@polar-sh/better-auth'
 import { Polar } from '@polar-sh/sdk'
+import { env } from '@workspace/config/env/server'
 import { db } from '@workspace/db'
 import * as schema from '@workspace/db/schema/auth'
 import { sendEmail } from '@workspace/email/lib/resend-client'
@@ -8,16 +9,6 @@ import { VerifyEmail } from '@workspace/email/templates/verify-email'
 import { betterAuth } from 'better-auth'
 import { drizzleAdapter } from 'better-auth/adapters/drizzle'
 import { admin } from 'better-auth/plugins'
-import { z } from 'zod'
-
-const env = z
-  .object({
-    CORS_ORIGIN: z.url().min(1, 'CORS origin is required'),
-    POLAR_ACCESS_TOKEN: z.string().min(1, 'Polar access token is required'),
-    POLAR_SUCCESS_URL: z.string().min(1, 'Polar success URL is required'),
-    RESEND_FROM_EMAIL: z.email('Valid from email is required'),
-  })
-  .parse(process.env)
 
 const polarClient = new Polar({
   accessToken: env.POLAR_ACCESS_TOKEN,
@@ -85,7 +76,7 @@ export const auth = betterAuth({
       ],
     }),
   ],
-  trustedOrigins: env.CORS_ORIGIN.split(','),
+  trustedOrigins: env.CORS_ORIGINS,
   user: {
     deleteUser: {
       enabled: true,
