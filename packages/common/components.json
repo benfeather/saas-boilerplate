@@ -5,7 +5,7 @@
 	"tsx": true,
 	"tailwind": {
 		"config": "",
-		"css": "./packages/ui/src/styles/theme.css",
+		"css": "./packages/common/src/styles/theme.css",
 		"baseColor": "zinc",
 		"cssVariables": true,
 		"prefix": ""
@@ -16,7 +16,7 @@
 		"hooks": "@workspace/common/hooks",
 		"lib": "@workspace/common/lib",
 		"ui": "@workspace/common/ui",
-		"utils": "@workspace/common/lib/utils"
+		"utils": "@workspace/common/utils"
 	},
 	"menuColor": "default",
 	"menuAccent": "subtle",

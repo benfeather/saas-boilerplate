@@ -3,41 +3,40 @@
 # top-most EditorConfig file
 root = true
 
-# Unix-style newlines with a newline ending every file
 [*]
+charset = utf-8
 end_of_line = lf
 insert_final_newline = true
-charset = utf-8
 trim_trailing_whitespace = true
 
 # JavaScript/TypeScript
 [*.{js,jsx,ts,tsx,mjs,cjs}]
-indent_style = space
 indent_size = 2
+indent_style = space
 max_line_length = 80
 quote_type = single
 
 # JSON
 [*.{json,jsonc}]
-indent_style = space
 indent_size = 2
+indent_style = space
 
 # CSS/SCSS/LESS
 [*.{css,scss,less}]
-indent_style = space
 indent_size = 2
+indent_style = space
 
 # HTML
 [*.{html,htm}]
-indent_style = space
 indent_size = 2
+indent_style = space
 
 # Markdown
 [*.md]
-trim_trailing_whitespace = false
 max_line_length = off
+trim_trailing_whitespace = false
 
 # YAML
 [*.{yml,yaml}]
-indent_style = space
 indent_size = 2
+indent_style = space
