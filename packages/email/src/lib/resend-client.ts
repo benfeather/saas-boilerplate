@@ -1,14 +1,7 @@
-import { log } from 'console'
+import { log } from 'node:console'
+import { env } from '@workspace/config/env/server'
 import type { JSX } from 'react/jsx-runtime'
 import { Resend } from 'resend'
-import { z } from 'zod'
-
-const env = z
-  .object({
-    RESEND_API_KEY: z.string().min(1, 'API key is required'),
-    RESEND_FROM_EMAIL: z.email('Valid from email is required'),
-  })
-  .parse(process.env)
 
 export const resendClient = new Resend(env.RESEND_API_KEY)
 

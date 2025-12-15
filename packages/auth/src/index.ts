@@ -1,11 +1,12 @@
-import { checkout, polar, portal } from '@polar-sh/better-auth'
+import { checkout, polar } from '@polar-sh/better-auth'
 import { Polar } from '@polar-sh/sdk'
 import { env } from '@workspace/config/env/server'
 import { db } from '@workspace/db'
-import * as schema from '@workspace/db/schema/auth'
+import * as schema from '@workspace/db/schema'
 import { sendEmail } from '@workspace/email/lib/resend-client'
 import { PasswordReset } from '@workspace/email/templates/password-reset'
-import { VerifyEmail } from '@workspace/email/templates/verify-email'
+import { VerifyAccount } from '@workspace/email/templates/verify-account'
+import { VerifyEmailChange } from '@workspace/email/templates/verify-email-change'
 import { betterAuth } from 'better-auth'
 import { drizzleAdapter } from 'better-auth/adapters/drizzle'
 import { admin } from 'better-auth/plugins'
@@ -48,7 +49,7 @@ export const auth = betterAuth({
       void sendEmail({
         to: user.email,
         subject: 'Verify your email address',
-        component: VerifyEmail({
+        component: VerifyAccount({
           name: user.name,
           url,
         }),
@@ -73,12 +74,28 @@ export const auth = betterAuth({
           successUrl: env.POLAR_SUCCESS_URL,
           returnUrl: env.POLAR_RETURN_URL,
         }),
-        portal(),
       ],
     }),
   ],
   trustedOrigins: env.CORS_ORIGINS,
   user: {
+    changeEmail: {
+      enabled: true,
+      sendChangeEmailConfirmation: async (
+        { user, newEmail, url, token },
+        request,
+      ) => {
+        void sendEmail({
+          to: newEmail,
+          subject: 'Confirm your new email address',
+          component: VerifyEmailChange({
+            name: user.name,
+            url,
+          }),
+        })
+      },
+      updateEmailWithoutVerification: false,
+    },
     deleteUser: {
       enabled: true,
       afterDelete: async (user, request) => {
@@ -86,6 +103,16 @@ export const auth = betterAuth({
           externalId: user.id,
         })
       },
+    },
+  },
+  socialProviders: {
+    apple: {
+      clientId: env.APPLE_OAUTH_CLIENT_ID,
+      clientSecret: env.APPLE_OAUTH_CLIENT_SECRET,
+    },
+    google: {
+      clientId: env.GOOGLE_OAUTH_CLIENT_ID,
+      clientSecret: env.GOOGLE_OAUTH_CLIENT_SECRET,
     },
   },
 })

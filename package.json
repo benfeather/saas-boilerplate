@@ -11,7 +11,7 @@
 		"db:push": "turbo --filter='@workspace/db' db:push",
 		"db:studio": "turbo --filter='@workspace/db' db:studio",
 		"db:generate": "turbo --filter='@workspace/db' db:generate",
-		"db:generate:auth": "bunx @better-auth/cli generate --config='./packages/auth/src/index.ts' --output='./packages/db/src/schema/auth.ts' --yes ",
+		"db:generate:auth": "bunx --bun @better-auth/cli@latest generate --config='./packages/auth/src/index.ts' --output='./packages/db/src/schema/_auth.ts' --yes",
 		"db:migrate": "turbo --filter='@workspace/db' db:migrate",
 		"db:start": "docker compose up -d",
 		"db:watch": "docker compose up",

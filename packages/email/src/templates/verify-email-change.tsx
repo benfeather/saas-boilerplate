@@ -6,25 +6,25 @@ type Props = {
   url: string
 }
 
-export function VerifyEmail({ name, url }: Props) {
+export function VerifyEmailChange({ name, url }: Props) {
   return (
     <MasterLayout>
-      <Preview>Verify your email address</Preview>
+      <Preview>Verify your new email address</Preview>
 
       <h1 className="mb-6 font-bold text-2xl text-gray-900">Hi {name}</h1>
 
       <p className="mb-4 text-base text-gray-700 leading-5">
-        Please verify your email address by clicking the button below.
+        Please verify your new email address by clicking the button below.
       </p>
 
       <Button
         href={url}
         className="bg-blue-500 px-3 py-2 font-medium text-white leading-4"
       >
-        Verify your email address
+        Verify your new email address
       </Button>
     </MasterLayout>
   )
 }
 
-export default VerifyEmail
+export default VerifyEmailChange

@@ -8,5 +8,5 @@ export default defineConfig({
     url: env.DB_URL,
   },
   out: './src/migrations',
-  schema: './src/schema',
+  schema: './src/schema/index.ts',
 })

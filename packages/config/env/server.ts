@@ -33,5 +33,9 @@ export const env = createEnv({
     ADMIN_PORT: z.coerce.number(),
     SERVER_PORT: z.coerce.number(),
     WEB_PORT: z.coerce.number(),
+    APPLE_OAUTH_CLIENT_ID: z.string().min(1),
+    APPLE_OAUTH_CLIENT_SECRET: z.string().min(1),
+    GOOGLE_OAUTH_CLIENT_ID: z.string().min(1),
+    GOOGLE_OAUTH_CLIENT_SECRET: z.string().min(1),
   },
 })
