@@ -12,6 +12,7 @@ import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 import type { TRPCOptionsProxy } from '@trpc/tanstack-react-query'
 import type { AppRouter } from '@workspace/api/router/index'
 import { SidebarProvider, SidebarTrigger } from '@workspace/common/ui/sidebar'
+import { Toaster } from '@workspace/common/ui/sonner'
 import { ThemeProvider } from 'next-themes'
 import AppSidebar from '@/components/app-sidebar'
 import css from '../index.css?url'
@@ -58,7 +59,10 @@ function RootDocument() {
 
             <main className="flex-1">
               <SidebarTrigger />
+
               <Outlet />
+
+              <Toaster />
             </main>
           </SidebarProvider>
         </ThemeProvider>
