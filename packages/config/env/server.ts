@@ -1,9 +1,14 @@
+import { dirname, resolve } from 'node:path'
+import { fileURLToPath } from 'node:url'
 import { config } from '@dotenvx/dotenvx'
 import { createEnv } from '@t3-oss/env-core'
 import { z } from 'zod'
 
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
+
 config({
-  path: '../../.env',
+  path: resolve(__dirname, '../../../.env'),
 })
 
 export const env = createEnv({
