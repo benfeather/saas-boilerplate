@@ -1,7 +1,12 @@
 import { Select as SelectPrimitive } from '@base-ui/react/select'
-import { Icon } from '@iconify/react'
+import {
+  IconCheck,
+  IconChevronDown,
+  IconChevronUp,
+  IconSelector,
+} from '@tabler/icons-react'
 import type * as React from 'react'
-import { cn } from 'tailwind-variants'
+import { cn, tv, type VariantProps } from 'tailwind-variants'
 
 const Select = SelectPrimitive.Root
 
@@ -46,10 +51,7 @@ function SelectTrigger({
       {children}
       <SelectPrimitive.Icon
         render={
-          <Icon
-            icon="tabler:selector"
-            className="pointer-events-none size-4 text-muted-foreground"
-          />
+          <IconSelector className="pointer-events-none size-4 text-muted-foreground" />
         }
       />
     </SelectPrimitive.Trigger>
@@ -83,7 +85,7 @@ function SelectContent({
         <SelectPrimitive.Popup
           data-slot="select-content"
           className={cn(
-            'data-closed:fade-out-0 data-open:fade-in-0 data-closed:zoom-out-95 data-open:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 relative isolate z-50 max-h-(--available-height) w-(--anchor-width) min-w-36 origin-(--transform-origin) overflow-y-auto overflow-x-hidden rounded-md bg-popover text-popover-foreground shadow-md ring-1 ring-foreground/10 duration-100 data-closed:animate-out data-open:animate-in',
+            'data-closed:fade-out-0 data-open:fade-in-0 data-closed:zoom-out-95 data-open:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 dark relative isolate z-50 max-h-(--available-height) w-(--anchor-width) min-w-36 origin-(--transform-origin) overflow-y-auto overflow-x-hidden rounded-md bg-popover text-popover-foreground shadow-md ring-1 ring-foreground/10 duration-100 data-closed:animate-out data-open:animate-in',
             className,
           )}
           {...props}
@@ -132,7 +134,7 @@ function SelectItem({
           <span className="pointer-events-none absolute right-2 flex size-4 items-center justify-center" />
         }
       >
-        <Icon icon="tabler:check" className="pointer-events-none" />
+        <IconCheck className="pointer-events-none" />
       </SelectPrimitive.ItemIndicator>
     </SelectPrimitive.Item>
   )
@@ -145,7 +147,7 @@ function SelectSeparator({
   return (
     <SelectPrimitive.Separator
       data-slot="select-separator"
-      className={cn('-mx-1 pointer-events-none my-1 h-px bg-border', className)}
+      className={cn('pointer-events-none -mx-1 my-1 h-px bg-border', className)}
       {...props}
     />
   )
@@ -164,7 +166,7 @@ function SelectScrollUpButton({
       )}
       {...props}
     >
-      <Icon icon="tabler:chevron-up" />
+      <IconChevronUp />
     </SelectPrimitive.ScrollUpArrow>
   )
 }
@@ -182,7 +184,7 @@ function SelectScrollDownButton({
       )}
       {...props}
     >
-      <Icon icon="tabler:chevron-down" />
+      <IconChevronDown />
     </SelectPrimitive.ScrollDownArrow>
   )
 }

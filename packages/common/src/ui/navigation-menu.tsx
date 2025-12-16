@@ -1,6 +1,7 @@
 import { NavigationMenu as NavigationMenuPrimitive } from '@base-ui/react/navigation-menu'
-import { Icon } from '@iconify/react'
-import { cn, tv } from 'tailwind-variants'
+import { IconChevronDown } from '@tabler/icons-react'
+import { cva } from 'class-variance-authority'
+import { cn, tv, type VariantProps } from 'tailwind-variants'
 
 function NavigationMenu({
   className,
@@ -11,7 +12,7 @@ function NavigationMenu({
     <NavigationMenuPrimitive.Root
       data-slot="navigation-menu"
       className={cn(
-        'group/navigation-menu relative flex items-center justify-center',
+        'group/navigation-menu relative flex max-w-max max-w-max flex-1 items-center justify-center',
         className,
       )}
       {...props}
@@ -30,13 +31,7 @@ function NavigationMenuList({
     <NavigationMenuPrimitive.List
       data-slot="navigation-menu-list"
       className={cn(
-        'group',
-        'flex',
-        'flex-1',
-        'list-none',
-        'items-center',
-        'justify-center',
-        'gap-0',
+        'group flex flex-1 list-none items-center justify-center gap-0',
         className,
       )}
       {...props}
@@ -73,9 +68,8 @@ function NavigationMenuTrigger({
       {...props}
     >
       {children}{' '}
-      <Icon
-        icon="tabler:chevron-down"
-        className="relative top-px ml-1 size-3 transition duration-300 group-data-open/navigation-menu-trigger:rotate-180 group-data-popup-open/navigation-menu-trigger:rotate-180"
+      <IconChevronDown
+        className="relative top-[1px] ml-1 size-3 transition duration-300 group-data-open/navigation-menu-trigger:rotate-180 group-data-popup-open/navigation-menu-trigger:rotate-180"
         aria-hidden="true"
       />
     </NavigationMenuPrimitive.Trigger>
@@ -114,7 +108,7 @@ function NavigationMenuPositioner({
         align={align}
         alignOffset={alignOffset}
         className={cn(
-          'data-[side=bottom]:before:-top-2.5 isolate z-50 h-[var(--positioner-height)] w-[var(--positioner-width)] max-w-[var(--available-width)] transition-[top,left,right,bottom] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] data-instant:transition-none data-[side=bottom]:before:right-0 data-[side=bottom]:before:left-0',
+          'isolate z-50 h-[var(--positioner-height)] w-[var(--positioner-width)] max-w-[var(--available-width)] transition-[top,left,right,bottom] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] data-[instant]:transition-none data-[side=bottom]:before:top-[-10px] data-[side=bottom]:before:right-0 data-[side=bottom]:before:left-0',
           className,
         )}
         {...props}

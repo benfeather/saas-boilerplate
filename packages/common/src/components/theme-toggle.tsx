@@ -13,7 +13,7 @@ export function ThemeToggle() {
     >
       <Icon
         icon="tabler:sun"
-        className="dark:-rotate-90 h-5 w-5 rotate-0 scale-100 transition-all dark:scale-0"
+        className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
       />
       <Icon
         icon="tabler:moon"

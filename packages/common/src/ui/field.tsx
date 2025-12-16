@@ -1,7 +1,8 @@
+import { Label } from '@workspace/common/ui/label'
+import { Separator } from '@workspace/common/ui/separator'
+
 import { useMemo } from 'react'
 import { cn, tv, type VariantProps } from 'tailwind-variants'
-import { Label } from './label'
-import { Separator } from './separator'
 
 function FieldSet({ className, ...props }: React.ComponentProps<'fieldset'>) {
   return (
@@ -69,7 +70,6 @@ function Field({
   ...props
 }: React.ComponentProps<'div'> & VariantProps<typeof fieldVariants>) {
   return (
-    // biome-ignore lint/a11y/useSemanticElements: Shadcn UI defaults
     <div
       role="group"
       data-slot="field"
@@ -128,7 +128,7 @@ function FieldDescription({ className, ...props }: React.ComponentProps<'p'>) {
     <p
       data-slot="field-description"
       className={cn(
-        '[[data-variant=legend]+&]:-mt-1.5 text-left font-normal text-muted-foreground text-sm leading-normal group-has-[[data-orientation=horizontal]]/field:text-balance',
+        'text-left font-normal text-muted-foreground text-sm leading-normal group-has-[[data-orientation=horizontal]]/field:text-balance [[data-variant=legend]+&]:-mt-1.5',
         'nth-last-2:-mt-1 last:mt-0',
         '[&>a:hover]:text-primary [&>a]:underline [&>a]:underline-offset-4',
         className,
@@ -150,7 +150,7 @@ function FieldSeparator({
       data-slot="field-separator"
       data-content={!!children}
       className={cn(
-        '-my-2 group-data-[variant=outline]/field-group:-mb-2 relative h-5 text-sm',
+        'relative -my-2 h-5 text-sm group-data-[variant=outline]/field-group:-mb-2',
         className,
       )}
       {...props}
@@ -189,7 +189,7 @@ function FieldError({
       ...new Map(errors.map((error) => [error?.message, error])).values(),
     ]
 
-    if (uniqueErrors?.length === 1) {
+    if (uniqueErrors?.length == 1) {
       return uniqueErrors[0]?.message
     }
 

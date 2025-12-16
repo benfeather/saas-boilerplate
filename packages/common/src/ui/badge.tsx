@@ -1,5 +1,6 @@
 import { mergeProps } from '@base-ui/react/merge-props'
 import { useRender } from '@base-ui/react/use-render'
+
 import { cn, tv, type VariantProps } from 'tailwind-variants'
 
 const badgeVariants = tv({

@@ -1,4 +1,5 @@
 import { Button as ButtonPrimitive } from '@base-ui/react/button'
+
 import { cn, tv, type VariantProps } from 'tailwind-variants'
 
 const buttonVariants = tv({
@@ -45,7 +46,7 @@ function Button({
   return (
     <ButtonPrimitive
       data-slot="button"
-      className={cn(buttonVariants({ variant, size }), className)}
+      className={cn(buttonVariants({ variant, size, className }))}
       {...props}
     />
   )

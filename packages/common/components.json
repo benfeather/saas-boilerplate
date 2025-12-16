@@ -6,7 +6,7 @@
 	"tailwind": {
 		"config": "",
 		"css": "./packages/common/src/styles/theme.css",
-		"baseColor": "zinc",
+		"baseColor": "gray",
 		"cssVariables": true,
 		"prefix": ""
 	},
@@ -18,7 +18,7 @@
 		"ui": "@workspace/common/ui",
 		"utils": "@workspace/common/utils"
 	},
-	"menuColor": "default",
-	"menuAccent": "subtle",
+	"menuColor": "inverted",
+	"menuAccent": "bold",
 	"registries": {}
 }

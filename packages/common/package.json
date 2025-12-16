@@ -23,7 +23,11 @@
 		}
 	},
 	"dependencies": {
+		"@base-ui/react": "^1.0.0",
 		"@workspace/api": "workspace:*",
-		"@workspace/config": "workspace:*"
+		"@workspace/config": "workspace:*",
+		"cmdk": "^1.1.1",
+		"next-themes": "^0.4.6",
+		"sonner": "^2.0.7"
 	}
 }
