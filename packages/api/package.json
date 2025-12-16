@@ -1,5 +1,7 @@
 {
 	"name": "@workspace/api",
+	"version": "1.0.0",
+	"type": "module",
 	"exports": {
 		".": {
 			"default": "./src/index.ts"
@@ -8,7 +10,6 @@
 			"default": "./src/*.ts"
 		}
 	},
-	"type": "module",
 	"dependencies": {
 		"@workspace/auth": "workspace:*",
 		"@workspace/config": "workspace:*",

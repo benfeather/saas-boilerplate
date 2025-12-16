@@ -1,7 +1,7 @@
 {
 	"name": "@workspace/common",
-	"type": "module",
 	"version": "1.0.0",
+	"type": "module",
 	"exports": {
 		"./components/*": {
 			"default": "./src/components/*.tsx"

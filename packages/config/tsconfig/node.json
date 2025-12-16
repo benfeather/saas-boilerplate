@@ -4,9 +4,9 @@
 	"compilerOptions": {
 		"allowImportingTsExtensions": true,
 		"lib": ["ESNext"],
-		"module": "esnext",
+		"module": "nodenext",
 		"moduleDetection": "force",
-		"moduleResolution": "bundler",
+		"moduleResolution": "nodenext",
 		"noEmit": true,
 		"resolveJsonModule": true
 	}

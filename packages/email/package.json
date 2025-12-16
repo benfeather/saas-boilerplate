@@ -1,5 +1,7 @@
 {
 	"name": "@workspace/email",
+	"version": "1.0.0",
+	"type": "module",
 	"exports": {
 		"./lib/*": {
 			"default": "./src/lib/*.ts"
@@ -8,7 +10,6 @@
 			"default": "./src/templates/*.tsx"
 		}
 	},
-	"type": "module",
 	"scripts": {
 		"dev": "email dev --dir='./src/templates' --port=4000"
 	},
