@@ -1,4 +1,4 @@
-import { cn, tv, type VariantProps } from 'tailwind-variants'
+import { cn } from 'tailwind-variants'
 
 function Skeleton({ className, ...props }: React.ComponentProps<'div'>) {
   return (

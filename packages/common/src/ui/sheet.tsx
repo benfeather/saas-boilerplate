@@ -2,7 +2,7 @@ import { Dialog as SheetPrimitive } from '@base-ui/react/dialog'
 import { Icon } from '@iconify/react'
 import { Button } from '@workspace/common/ui/button'
 import type * as React from 'react'
-import { cn, tv, type VariantProps } from 'tailwind-variants'
+import { cn } from 'tailwind-variants'
 
 function Sheet({ ...props }: SheetPrimitive.Root.Props) {
   return <SheetPrimitive.Root data-slot="sheet" {...props} />

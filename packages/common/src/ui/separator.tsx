@@ -1,6 +1,5 @@
 import { Separator as SeparatorPrimitive } from '@base-ui/react/separator'
-
-import { cn, tv, type VariantProps } from 'tailwind-variants'
+import { cn } from 'tailwind-variants'
 
 function Separator({
   className,

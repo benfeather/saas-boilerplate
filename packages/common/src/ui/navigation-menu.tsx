@@ -1,7 +1,6 @@
 import { NavigationMenu as NavigationMenuPrimitive } from '@base-ui/react/navigation-menu'
 import { Icon } from '@iconify/react'
-import { cva } from 'class-variance-authority'
-import { cn, tv, type VariantProps } from 'tailwind-variants'
+import { cn, tv } from 'tailwind-variants'
 
 function NavigationMenu({
   className,

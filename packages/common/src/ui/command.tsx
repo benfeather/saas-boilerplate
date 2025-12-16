@@ -9,7 +9,7 @@ import {
 import { InputGroup, InputGroupAddon } from '@workspace/common/ui/input-group'
 import { Command as CommandPrimitive } from 'cmdk'
 import type * as React from 'react'
-import { cn, tv, type VariantProps } from 'tailwind-variants'
+import { cn } from 'tailwind-variants'
 
 function Command({
   className,

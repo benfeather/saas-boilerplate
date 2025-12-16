@@ -1,6 +1,5 @@
 import { Label } from '@workspace/common/ui/label'
 import { Separator } from '@workspace/common/ui/separator'
-
 import { useMemo } from 'react'
 import { cn, tv, type VariantProps } from 'tailwind-variants'
 
@@ -70,6 +69,7 @@ function Field({
   ...props
 }: React.ComponentProps<'div'> & VariantProps<typeof fieldVariants>) {
   return (
+    // biome-ignore lint/a11y/useSemanticElements: shadcn
     <div
       role="group"
       data-slot="field"
@@ -189,7 +189,7 @@ function FieldError({
       ...new Map(errors.map((error) => [error?.message, error])).values(),
     ]
 
-    if (uniqueErrors?.length == 1) {
+    if (uniqueErrors?.length === 1) {
       return uniqueErrors[0]?.message
     }
 

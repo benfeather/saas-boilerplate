@@ -8,7 +8,7 @@ import {
   InputGroupInput,
 } from '@workspace/common/ui/input-group'
 import * as React from 'react'
-import { cn, tv, type VariantProps } from 'tailwind-variants'
+import { cn } from 'tailwind-variants'
 
 const Combobox = ComboboxPrimitive.Root
 

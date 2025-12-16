@@ -1,12 +1,12 @@
 import { Button } from '@workspace/common/ui/button'
 import { Input } from '@workspace/common/ui/input'
 import { Textarea } from '@workspace/common/ui/textarea'
-
 import type * as React from 'react'
 import { cn, tv, type VariantProps } from 'tailwind-variants'
 
 function InputGroup({ className, ...props }: React.ComponentProps<'div'>) {
   return (
+    // biome-ignore lint/a11y/useSemanticElements: shadcn
     <div
       data-slot="input-group"
       role="group"
@@ -44,6 +44,8 @@ function InputGroupAddon({
   ...props
 }: React.ComponentProps<'div'> & VariantProps<typeof inputGroupAddonVariants>) {
   return (
+    // biome-ignore lint/a11y/useKeyWithClickEvents: shadcn
+    // biome-ignore lint/a11y/useSemanticElements: shadcn
     <div
       role="group"
       data-slot="input-group-addon"

@@ -2,7 +2,7 @@ import { Dialog as DialogPrimitive } from '@base-ui/react/dialog'
 import { Icon } from '@iconify/react'
 import { Button } from '@workspace/common/ui/button'
 import type * as React from 'react'
-import { cn, tv, type VariantProps } from 'tailwind-variants'
+import { cn } from 'tailwind-variants'
 
 function Dialog({ ...props }: DialogPrimitive.Root.Props) {
   return <DialogPrimitive.Root data-slot="dialog" {...props} />

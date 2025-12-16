@@ -9,11 +9,12 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as AuthRouteImport } from './routes/_auth'
+import { Route as AuthRouteRouteImport } from './routes/_auth/route'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as AuthDashboardRouteImport } from './routes/_auth.dashboard'
+import { Route as AuthUsersRouteImport } from './routes/_auth/users'
+import { Route as AuthDashboardRouteImport } from './routes/_auth/dashboard'
 
-const AuthRoute = AuthRouteImport.update({
+const AuthRouteRoute = AuthRouteRouteImport.update({
   id: '/_auth',
   getParentRoute: () => rootRouteImport,
 } as any)
@@ -22,37 +23,45 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthUsersRoute = AuthUsersRouteImport.update({
+  id: '/users',
+  path: '/users',
+  getParentRoute: () => AuthRouteRoute,
+} as any)
 const AuthDashboardRoute = AuthDashboardRouteImport.update({
   id: '/dashboard',
   path: '/dashboard',
-  getParentRoute: () => AuthRoute,
+  getParentRoute: () => AuthRouteRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/dashboard': typeof AuthDashboardRoute
+  '/users': typeof AuthUsersRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/dashboard': typeof AuthDashboardRoute
+  '/users': typeof AuthUsersRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/_auth': typeof AuthRouteWithChildren
+  '/_auth': typeof AuthRouteRouteWithChildren
   '/_auth/dashboard': typeof AuthDashboardRoute
+  '/_auth/users': typeof AuthUsersRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/dashboard'
+  fullPaths: '/' | '/dashboard' | '/users'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/dashboard'
-  id: '__root__' | '/' | '/_auth' | '/_auth/dashboard'
+  to: '/' | '/dashboard' | '/users'
+  id: '__root__' | '/' | '/_auth' | '/_auth/dashboard' | '/_auth/users'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  AuthRoute: typeof AuthRouteWithChildren
+  AuthRouteRoute: typeof AuthRouteRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -61,7 +70,7 @@ declare module '@tanstack/react-router' {
       id: '/_auth'
       path: ''
       fullPath: ''
-      preLoaderRoute: typeof AuthRouteImport
+      preLoaderRoute: typeof AuthRouteRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -71,29 +80,40 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_auth/users': {
+      id: '/_auth/users'
+      path: '/users'
+      fullPath: '/users'
+      preLoaderRoute: typeof AuthUsersRouteImport
+      parentRoute: typeof AuthRouteRoute
+    }
     '/_auth/dashboard': {
       id: '/_auth/dashboard'
       path: '/dashboard'
       fullPath: '/dashboard'
       preLoaderRoute: typeof AuthDashboardRouteImport
-      parentRoute: typeof AuthRoute
+      parentRoute: typeof AuthRouteRoute
     }
   }
 }
 
-interface AuthRouteChildren {
+interface AuthRouteRouteChildren {
   AuthDashboardRoute: typeof AuthDashboardRoute
+  AuthUsersRoute: typeof AuthUsersRoute
 }
 
-const AuthRouteChildren: AuthRouteChildren = {
+const AuthRouteRouteChildren: AuthRouteRouteChildren = {
   AuthDashboardRoute: AuthDashboardRoute,
+  AuthUsersRoute: AuthUsersRoute,
 }
 
-const AuthRouteWithChildren = AuthRoute._addFileChildren(AuthRouteChildren)
+const AuthRouteRouteWithChildren = AuthRouteRoute._addFileChildren(
+  AuthRouteRouteChildren,
+)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  AuthRoute: AuthRouteWithChildren,
+  AuthRouteRoute: AuthRouteRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

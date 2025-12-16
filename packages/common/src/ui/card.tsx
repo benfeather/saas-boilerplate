@@ -1,6 +1,5 @@
 import type * as React from 'react'
-
-import { cn, tv, type VariantProps } from 'tailwind-variants'
+import { cn } from 'tailwind-variants'
 
 function Card({
   className,

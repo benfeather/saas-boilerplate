@@ -1,9 +1,9 @@
 import type * as React from 'react'
-
-import { cn, tv, type VariantProps } from 'tailwind-variants'
+import { cn } from 'tailwind-variants'
 
 function Label({ className, ...props }: React.ComponentProps<'label'>) {
   return (
+    // biome-ignore lint/a11y/noLabelWithoutControl: shadcn
     <label
       data-slot="label"
       className={cn(

@@ -24,7 +24,12 @@ export default function AppSidebar({ user }: { user?: any }) {
     {
       icon: 'tabler:dashboard',
       title: 'Dashboard',
-      url: '',
+      url: '/dashboard',
+    },
+    {
+      icon: 'tabler:users',
+      title: 'Users',
+      url: '/users',
     },
   ]
 

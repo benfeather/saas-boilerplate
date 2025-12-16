@@ -1,7 +1,7 @@
 import { Menu as MenuPrimitive } from '@base-ui/react/menu'
 import { Icon } from '@iconify/react'
 import type * as React from 'react'
-import { cn, tv, type VariantProps } from 'tailwind-variants'
+import { cn } from 'tailwind-variants'
 
 function DropdownMenu({ ...props }: MenuPrimitive.Root.Props) {
   return <MenuPrimitive.Root data-slot="dropdown-menu" {...props} />

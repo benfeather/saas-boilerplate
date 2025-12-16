@@ -1,6 +1,5 @@
 import { Tooltip as TooltipPrimitive } from '@base-ui/react/tooltip'
-
-import { cn, tv, type VariantProps } from 'tailwind-variants'
+import { cn } from 'tailwind-variants'
 
 function TooltipProvider({
   delay = 0,

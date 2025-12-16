@@ -1,7 +1,7 @@
 import { AlertDialog as AlertDialogPrimitive } from '@base-ui/react/alert-dialog'
 import { Button } from '@workspace/common/ui/button'
 import type * as React from 'react'
-import { cn, tv, type VariantProps } from 'tailwind-variants'
+import { cn } from 'tailwind-variants'
 
 function AlertDialog({ ...props }: AlertDialogPrimitive.Root.Props) {
   return <AlertDialogPrimitive.Root data-slot="alert-dialog" {...props} />

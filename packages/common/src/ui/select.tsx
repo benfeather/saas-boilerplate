@@ -1,7 +1,7 @@
 import { Select as SelectPrimitive } from '@base-ui/react/select'
 import { Icon } from '@iconify/react'
 import type * as React from 'react'
-import { cn, tv, type VariantProps } from 'tailwind-variants'
+import { cn } from 'tailwind-variants'
 
 const Select = SelectPrimitive.Root
 
