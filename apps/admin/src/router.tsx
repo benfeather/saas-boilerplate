@@ -14,6 +14,7 @@ export const getRouter = () => {
     defaultPendingComponent: () => <div>Loading...</div>,
     routeTree,
     scrollRestoration: true,
+    trailingSlash: 'always',
     Wrap: ({ children }) => (
       <QueryClientProvider client={queryClient}>
         <TRPCProvider trpcClient={trpcClient} queryClient={queryClient}>

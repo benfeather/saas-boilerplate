@@ -10,14 +10,6 @@ export const authMiddleware = createMiddleware().server(
       },
     })
 
-    if (!session?.user) {
-      throw new Response('Unauthorized', { status: 401 })
-    }
-
-    if (session.user.role !== 'admin') {
-      throw new Response('Forbidden', { status: 403 })
-    }
-
     return next({
       context: { session },
     })
