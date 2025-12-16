@@ -1,10 +1,10 @@
 import { useForm } from '@tanstack/react-form'
 import { useNavigate } from '@tanstack/react-router'
+import { Loader } from '@workspace/common/components/loader'
 import { authClient } from '@workspace/common/lib/auth-client'
 import { Button } from '@workspace/common/ui/button'
 import { Input } from '@workspace/common/ui/input'
 import { Label } from '@workspace/common/ui/label'
-import { Loader } from '@workspace/common/ui/loader'
 import z from 'zod'
 
 export default function SignUpForm() {

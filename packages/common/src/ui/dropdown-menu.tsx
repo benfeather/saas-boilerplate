@@ -1,5 +1,5 @@
 import { Menu as MenuPrimitive } from '@base-ui/react/menu'
-import { IconCheck, IconChevronRight } from '@tabler/icons-react'
+import { Icon } from '@iconify/react'
 import type * as React from 'react'
 import { cn, tv, type VariantProps } from 'tailwind-variants'
 
@@ -119,7 +119,7 @@ function DropdownMenuSubTrigger({
       {...props}
     >
       {children}
-      <IconChevronRight className="ml-auto" />
+      <Icon icon="tabler:chevron-right" className="ml-auto" />
     </MenuPrimitive.SubmenuTrigger>
   )
 }
@@ -169,7 +169,7 @@ function DropdownMenuCheckboxItem({
         data-slot="dropdown-menu-checkbox-item-indicator"
       >
         <MenuPrimitive.CheckboxItemIndicator>
-          <IconCheck />
+          <Icon icon="tabler:check" />
         </MenuPrimitive.CheckboxItemIndicator>
       </span>
       {children}
@@ -205,7 +205,7 @@ function DropdownMenuRadioItem({
         data-slot="dropdown-menu-radio-item-indicator"
       >
         <MenuPrimitive.RadioItemIndicator>
-          <IconCheck />
+          <Icon icon="tabler:check" />
         </MenuPrimitive.RadioItemIndicator>
       </span>
       {children}

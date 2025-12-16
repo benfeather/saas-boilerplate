@@ -11,6 +11,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from '@workspace/common/ui/sidebar'
+import { NavUser } from './nav-user'
 
 type MenuItem = {
   icon: IconifyIcon | string
@@ -18,7 +19,7 @@ type MenuItem = {
   url: string
 }
 
-export default function AppSidebar() {
+export default function AppSidebar({ user }: { user?: any }) {
   const items: MenuItem[] = [
     {
       icon: 'tabler:dashboard',
@@ -32,20 +33,15 @@ export default function AppSidebar() {
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
-            <SidebarMenuButton
-              size="lg"
-              render={
-                <a href="#">
-                  <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
-                    <Command className="size-4" />
-                  </div>
-                  <div className="grid flex-1 text-left text-sm leading-tight">
-                    <span className="truncate font-medium">Acme Inc</span>
-                    <span className="truncate text-xs">Enterprise</span>
-                  </div>
-                </a>
-              }
-            />
+            <SidebarMenuButton size="lg">
+              <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
+                <Command className="size-4" />
+              </div>
+              <div className="grid flex-1 text-left text-sm leading-tight">
+                <span className="truncate font-medium">Acme Inc</span>
+                <span className="truncate text-xs">Enterprise</span>
+              </div>
+            </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarHeader>
@@ -68,9 +64,19 @@ export default function AppSidebar() {
         </SidebarGroup>
       </SidebarContent>
       <SidebarFooter>
-        <div className="p-4 text-center text-gray-500 text-sm">
-          © {new Date().getFullYear()} My Company
-        </div>
+        <SidebarMenu>
+          <SidebarMenuItem>
+            {user && (
+              <NavUser
+                user={{
+                  name: user.name,
+                  email: user.email,
+                  avatar: user.avatar,
+                }}
+              />
+            )}
+          </SidebarMenuItem>
+        </SidebarMenu>
       </SidebarFooter>
     </Sidebar>
   )

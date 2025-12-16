@@ -1,11 +1,11 @@
 import { Link } from '@tanstack/react-router'
+import { ThemeToggle } from '@workspace/common/components/theme-toggle'
 import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
 } from '@workspace/common/ui/navigation-menu'
-import { ThemeToggle } from '@workspace/common/ui/theme-toggle'
 
 export default function Header() {
   const links = [

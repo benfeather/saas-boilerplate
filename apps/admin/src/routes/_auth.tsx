@@ -6,28 +6,34 @@ import { getUser } from '@/functions/get-user'
 export const Route = createFileRoute('/_auth')({
   component: RouteComponent,
   beforeLoad: async () => {
-    const session = await getUser()
+    const { user, session } = await getUser()
 
-    if (!session?.user || session.user.role !== 'admin') {
+    if (!user || user.role !== 'admin') {
       throw redirect({
         to: '/',
       })
     }
 
     return {
+      user,
       session,
     }
   },
 })
 
 function RouteComponent() {
+  const { user } = Route.useRouteContext()
+
   return (
     <SidebarProvider>
-      <AppSidebar />
+      <AppSidebar user={user} />
 
       <main className="flex-1">
         <SidebarTrigger />
-        <Outlet />
+
+        <div className="mx-auto max-w-7xl px-4">
+          <Outlet />
+        </div>
       </main>
     </SidebarProvider>
   )
