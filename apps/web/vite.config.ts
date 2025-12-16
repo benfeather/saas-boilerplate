@@ -9,7 +9,11 @@ import tsConfigPaths from 'vite-tsconfig-paths'
 
 export default defineConfig({
   plugins: [
-    devtools(),
+    devtools({
+      eventBusConfig: {
+        port: env.WEB_DEVTOOLS_PORT,
+      },
+    }),
     nitro(),
     tsConfigPaths(),
     tailwindcss(),
