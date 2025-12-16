@@ -1,10 +1,5 @@
 import { Select as SelectPrimitive } from '@base-ui/react/select'
-import {
-  IconCheck,
-  IconChevronDown,
-  IconChevronUp,
-  IconSelector,
-} from '@tabler/icons-react'
+import { Icon } from '@iconify/react'
 import type * as React from 'react'
 import { cn, tv, type VariantProps } from 'tailwind-variants'
 
@@ -51,7 +46,10 @@ function SelectTrigger({
       {children}
       <SelectPrimitive.Icon
         render={
-          <IconSelector className="pointer-events-none size-4 text-muted-foreground" />
+          <Icon
+            icon="tabler:selector"
+            className="pointer-events-none size-4 text-muted-foreground"
+          />
         }
       />
     </SelectPrimitive.Trigger>
@@ -134,7 +132,7 @@ function SelectItem({
           <span className="pointer-events-none absolute right-2 flex size-4 items-center justify-center" />
         }
       >
-        <IconCheck className="pointer-events-none" />
+        <Icon icon="tabler:check" className="pointer-events-none" />
       </SelectPrimitive.ItemIndicator>
     </SelectPrimitive.Item>
   )
@@ -166,7 +164,7 @@ function SelectScrollUpButton({
       )}
       {...props}
     >
-      <IconChevronUp />
+      <Icon icon="tabler:chevron-up" />
     </SelectPrimitive.ScrollUpArrow>
   )
 }
@@ -184,7 +182,7 @@ function SelectScrollDownButton({
       )}
       {...props}
     >
-      <IconChevronDown />
+      <Icon icon="tabler:chevron-down" />
     </SelectPrimitive.ScrollDownArrow>
   )
 }

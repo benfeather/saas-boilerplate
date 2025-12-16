@@ -1,5 +1,5 @@
 import { Dialog as SheetPrimitive } from '@base-ui/react/dialog'
-import { IconX } from '@tabler/icons-react'
+import { Icon } from '@iconify/react'
 import { Button } from '@workspace/common/ui/button'
 import type * as React from 'react'
 import { cn, tv, type VariantProps } from 'tailwind-variants'
@@ -67,7 +67,7 @@ function SheetContent({
               />
             }
           >
-            <IconX />
+            <Icon icon="tabler:x" />
             <span className="sr-only">Close</span>
           </SheetPrimitive.Close>
         )}

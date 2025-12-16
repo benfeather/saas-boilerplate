@@ -1,5 +1,5 @@
 import { Combobox as ComboboxPrimitive } from '@base-ui/react'
-import { IconCheck, IconChevronDown, IconX } from '@tabler/icons-react'
+import { Icon } from '@iconify/react'
 import { Button } from '@workspace/common/ui/button'
 import {
   InputGroup,
@@ -28,7 +28,10 @@ function ComboboxTrigger({
       {...props}
     >
       {children}
-      <IconChevronDown className="pointer-events-none size-4 text-muted-foreground" />
+      <Icon
+        icon="tabler:chevron-down"
+        className="pointer-events-none size-4 text-muted-foreground"
+      />
     </ComboboxPrimitive.Trigger>
   )
 }
@@ -41,7 +44,7 @@ function ComboboxClear({ className, ...props }: ComboboxPrimitive.Clear.Props) {
       className={cn(className)}
       {...props}
     >
-      <IconX className="pointer-events-none" />
+      <Icon icon="tabler:x" className="pointer-events-none" />
     </ComboboxPrimitive.Clear>
   )
 }
@@ -151,7 +154,7 @@ function ComboboxItem({
           <span className="pointer-events-none absolute right-2 flex size-4 items-center justify-center" />
         }
       >
-        <IconCheck className="pointer-events-none" />
+        <Icon icon="tabler:check" className="pointer-events-none" />
       </ComboboxPrimitive.ItemIndicator>
     </ComboboxPrimitive.Item>
   )
@@ -253,7 +256,7 @@ function ComboboxChip({
           className="-ml-1 opacity-50 hover:opacity-100"
           data-slot="combobox-chip-remove"
         >
-          <IconX className="pointer-events-none" />
+          <Icon icon="tabler:x" className="pointer-events-none" />
         </ComboboxPrimitive.ChipRemove>
       )}
     </ComboboxPrimitive.Chip>

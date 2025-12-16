@@ -1,6 +1,6 @@
 import { mergeProps } from '@base-ui/react/merge-props'
 import { useRender } from '@base-ui/react/use-render'
-import { IconLayoutSidebar } from '@tabler/icons-react'
+import { Icon } from '@iconify/react'
 import { useIsMobile } from '@workspace/common/hooks/use-mobile'
 import { Button } from '@workspace/common/ui/button'
 import { Input } from '@workspace/common/ui/input'
@@ -268,7 +268,7 @@ function SidebarTrigger({
       }}
       {...props}
     >
-      <IconLayoutSidebar />
+      <Icon icon="tabler:layout-sidebar" />
       <span className="sr-only">Toggle Sidebar</span>
     </Button>
   )

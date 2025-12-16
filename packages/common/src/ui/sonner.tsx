@@ -1,10 +1,4 @@
-import {
-  IconAlertOctagon,
-  IconAlertTriangle,
-  IconCircleCheck,
-  IconInfoCircle,
-  IconLoader,
-} from '@tabler/icons-react'
+import { Icon } from '@iconify/react'
 import { useTheme } from 'next-themes'
 import { Toaster as Sonner, type ToasterProps } from 'sonner'
 
@@ -16,11 +10,11 @@ const Toaster = ({ ...props }: ToasterProps) => {
       theme={theme as ToasterProps['theme']}
       className="toaster group"
       icons={{
-        success: <IconCircleCheck className="size-4" />,
-        info: <IconInfoCircle className="size-4" />,
-        warning: <IconAlertTriangle className="size-4" />,
-        error: <IconAlertOctagon className="size-4" />,
-        loading: <IconLoader className="size-4 animate-spin" />,
+        success: <Icon icon="tabler:circle-check" className="size-4" />,
+        info: <Icon icon="tabler:info-circle" className="size-4" />,
+        warning: <Icon icon="tabler:alert-triangle" className="size-4" />,
+        error: <Icon icon="tabler:alert-octagon" className="size-4" />,
+        loading: <Icon icon="tabler:loader" className="size-4 animate-spin" />,
       }}
       style={
         {
