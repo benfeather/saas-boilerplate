@@ -1,4 +1,4 @@
-import { env } from '@workspace/config/env/server'
+import { env } from '@workspace/env/server'
 import { defineConfig } from 'drizzle-kit'
 
 export default defineConfig({

@@ -1,5 +1,5 @@
 import { log } from 'node:console'
-import { env } from '@workspace/config/env/server'
+import { env } from '@workspace/env/server'
 import type { JSX } from 'react/jsx-runtime'
 import { Resend } from 'resend'
 

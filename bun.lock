@@ -24,6 +24,7 @@
         "@trpc/server": "^11.8.0",
         "@trpc/tanstack-react-query": "^11.8.0",
         "better-auth": "^1.4.7",
+        "cmdk": "^1.1.1",
         "drizzle-orm": "^0.45.1",
         "hono": "^4.11.1",
         "next-themes": "^0.4.6",
@@ -69,6 +70,7 @@
         "@workspace/auth": "workspace:*",
         "@workspace/common": "workspace:*",
         "@workspace/config": "workspace:*",
+        "@workspace/env": "workspace:*",
       },
     },
     "apps/server": {
@@ -76,9 +78,8 @@
       "dependencies": {
         "@workspace/api": "workspace:*",
         "@workspace/auth": "workspace:*",
-      },
-      "devDependencies": {
         "@workspace/config": "workspace:*",
+        "@workspace/env": "workspace:*",
       },
     },
     "apps/web": {
@@ -88,6 +89,7 @@
         "@workspace/auth": "workspace:*",
         "@workspace/common": "workspace:*",
         "@workspace/config": "workspace:*",
+        "@workspace/env": "workspace:*",
       },
     },
     "packages/api": {
@@ -106,18 +108,16 @@
         "@workspace/config": "workspace:*",
         "@workspace/db": "workspace:*",
         "@workspace/email": "workspace:*",
+        "@workspace/env": "workspace:*",
       },
     },
     "packages/common": {
       "name": "@workspace/common",
       "version": "1.0.0",
       "dependencies": {
-        "@base-ui/react": "^1.0.0",
         "@workspace/api": "workspace:*",
         "@workspace/config": "workspace:*",
-        "cmdk": "^1.1.1",
-        "next-themes": "^0.4.6",
-        "sonner": "^2.0.7",
+        "@workspace/env": "workspace:*",
       },
     },
     "packages/config": {
@@ -129,10 +129,19 @@
       "version": "1.0.0",
       "dependencies": {
         "@workspace/config": "workspace:*",
+        "@workspace/env": "workspace:*",
       },
     },
     "packages/email": {
       "name": "@workspace/email",
+      "version": "1.0.0",
+      "dependencies": {
+        "@workspace/config": "workspace:*",
+        "@workspace/env": "workspace:*",
+      },
+    },
+    "packages/env": {
+      "name": "@workspace/env",
       "version": "1.0.0",
       "dependencies": {
         "@workspace/config": "workspace:*",
@@ -841,6 +850,8 @@
     "@workspace/db": ["@workspace/db@workspace:packages/db"],
 
     "@workspace/email": ["@workspace/email@workspace:packages/email"],
+
+    "@workspace/env": ["@workspace/env@workspace:packages/env"],
 
     "@workspace/server": ["@workspace/server@workspace:apps/server"],
 

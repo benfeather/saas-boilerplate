@@ -1,5 +1,5 @@
 import { polarClient } from '@polar-sh/better-auth/client'
-import { env } from '@workspace/config/env/client'
+import { env } from '@workspace/env/client'
 import { adminClient } from 'better-auth/client/plugins'
 import { createAuthClient } from 'better-auth/react'
 

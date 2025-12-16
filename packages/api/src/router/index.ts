@@ -1,15 +1,11 @@
-import { protectedProcedure, publicProcedure, router } from '../index'
+import { publicProcedure, router } from '@workspace/api'
+import { adminRouter } from '@workspace/api/router/admin'
 
 export const appRouter = router({
   healthCheck: publicProcedure.query(() => {
     return 'OK'
   }),
-  privateData: protectedProcedure.query(({ ctx }) => {
-    return {
-      message: 'This is private',
-      user: ctx.session.user,
-    }
-  }),
+  admin: adminRouter,
 })
 
 export type AppRouter = typeof appRouter

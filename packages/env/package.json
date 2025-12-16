@@ -1,0 +1,13 @@
+{
+	"name": "@workspace/env",
+	"version": "1.0.0",
+	"type": "module",
+	"exports": {
+		"./*": {
+			"default": "./src/*.ts"
+		}
+	},
+	"dependencies": {
+		"@workspace/config": "workspace:*"
+	}
+}

@@ -14,6 +14,7 @@
 		"dev": "email dev --dir='./src/templates' --port=4000"
 	},
 	"dependencies": {
-		"@workspace/config": "workspace:*"
+		"@workspace/config": "workspace:*",
+		"@workspace/env": "workspace:*"
 	}
 }

@@ -4,7 +4,7 @@ import { createEnv } from '@t3-oss/env-core'
 import { z } from 'zod'
 
 config({
-  path: resolve(__dirname, '../../../.env'),
+  path: resolve(__dirname, '../.env'),
 })
 
 export const env = createEnv({

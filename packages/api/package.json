@@ -6,8 +6,11 @@
 		".": {
 			"default": "./src/index.ts"
 		},
-		"./*": {
-			"default": "./src/*.ts"
+		"./context": {
+			"default": "./src/context.ts"
+		},
+		"./router": {
+			"default": "./src/router/index.ts"
 		}
 	},
 	"dependencies": {

@@ -1,20 +1,16 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { getUsers } from '@/functions/get-users'
+import { useTRPC } from '@workspace/common/lib/trpc'
 
 export const Route = createFileRoute('/_auth/users')({
   component: RouteComponent,
   loader: async () => {
-    const data = await getUsers()
-
-    return {
-      data,
-    }
+    const trpc = useTRPC()
+    return trpc.admin.users.getAll()
   },
 })
 
 function RouteComponent() {
-  const { data } = Route.useLoaderData()
-  const { user } = Route.useRouteContext()
+  const data = Route.useLoaderData()
 
   return (
     <div>
