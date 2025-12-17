@@ -1,6 +1,7 @@
-import { adminProcedure, router } from '@workspace/api'
 import { auth } from '@workspace/auth'
 import { z } from 'zod'
+import { router } from '../../lib/client'
+import { adminProcedure } from '../../lib/procedures'
 
 export const userRouter = router({
   list: adminProcedure

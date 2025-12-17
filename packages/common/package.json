@@ -3,24 +3,12 @@
 	"version": "1.0.0",
 	"type": "module",
 	"exports": {
-		"./components/*": {
-			"default": "./src/components/*.tsx"
-		},
-		"./hooks/*": {
-			"default": "./src/hooks/*.ts"
-		},
-		"./lib/*": {
-			"default": "./src/lib/*.ts"
-		},
-		"./styles/*": {
-			"default": "./src/styles/*.css"
-		},
-		"./ui/*": {
-			"default": "./src/ui/*.tsx"
-		},
-		"./utils/*": {
-			"default": "./src/utils/*.ts"
-		}
+		"./components/*": "./src/components/*.tsx",
+		"./hooks/*": "./src/hooks/*.tsx",
+		"./lib/*": "./src/lib/*.ts",
+		"./styles/*": "./src/styles/*.css",
+		"./ui/*": "./src/ui/*.tsx",
+		"./utils/*": "./src/utils/*.ts"
 	},
 	"dependencies": {
 		"@base-ui/react": "^1.0.0",

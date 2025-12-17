@@ -10,7 +10,7 @@ function RouteComponent() {
   const { user, session } = Route.useRouteContext()
 
   const trpc = useTRPC()
-  const privateData = useQuery(trpc.privateData.queryOptions())
+  const privateData = useQuery(trpc.private.data.queryOptions())
 
   return (
     <div>

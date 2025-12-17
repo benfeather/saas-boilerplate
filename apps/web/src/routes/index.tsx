@@ -8,7 +8,7 @@ export const Route = createFileRoute('/')({
 
 function RouteComponent() {
   const trpc = useTRPC()
-  const healthCheck = useQuery(trpc.healthCheck.queryOptions())
+  const healthCheck = useQuery(trpc.public.healthCheck.queryOptions())
 
   return (
     <div className="container mx-auto max-w-3xl px-4 py-6">

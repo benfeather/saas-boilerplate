@@ -24,6 +24,7 @@
         "@tanstack/react-router": "catalog:deps",
         "@tanstack/react-start": "catalog:deps",
         "@tanstack/react-table": "catalog:deps",
+        "@trpc/tanstack-react-query": "catalog:deps",
         "@workspace/api": "workspace:*",
         "@workspace/auth": "workspace:*",
         "@workspace/common": "workspace:*",
@@ -71,6 +72,7 @@
         "@tanstack/react-router": "catalog:deps",
         "@tanstack/react-start": "catalog:deps",
         "@tanstack/react-table": "catalog:deps",
+        "@trpc/tanstack-react-query": "catalog:deps",
         "@workspace/api": "workspace:*",
         "@workspace/auth": "workspace:*",
         "@workspace/common": "workspace:*",
@@ -82,6 +84,7 @@
         "tailwind-variants": "catalog:deps",
         "tailwindcss": "catalog:deps",
         "tw-animate-css": "catalog:deps",
+        "zod": "catalog:deps",
       },
       "devDependencies": {
         "@tailwindcss/vite": "catalog:dev",

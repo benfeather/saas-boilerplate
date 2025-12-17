@@ -18,7 +18,7 @@ function RouteComponent() {
           variant="link"
           className="text-indigo-600 hover:text-indigo-800"
         >
-          <Link to="/register">Need an account? Sign Up</Link>
+          <Link to="/register/">Need an account? Sign Up</Link>
         </Button>
       </div>
     </div>

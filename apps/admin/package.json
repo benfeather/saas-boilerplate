@@ -13,6 +13,7 @@
 		"@tanstack/react-router": "catalog:deps",
 		"@tanstack/react-start": "catalog:deps",
 		"@tanstack/react-table": "catalog:deps",
+		"@trpc/tanstack-react-query": "catalog:deps",
 		"@workspace/api": "workspace:*",
 		"@workspace/auth": "workspace:*",
 		"@workspace/common": "workspace:*",

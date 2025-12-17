@@ -15,7 +15,7 @@ export const Route = createFileRoute('/dashboard')({
     ])
 
     if (!session) {
-      throw redirect({ to: '/login' })
+      throw redirect({ to: '/login/' })
     }
 
     return { session, customerState }
@@ -26,7 +26,7 @@ function RouteComponent() {
   const { session, customerState } = Route.useLoaderData()
 
   const trpc = useTRPC()
-  const privateData = useQuery(trpc.privateData.queryOptions())
+  const privateData = useQuery(trpc.private.data.queryOptions())
 
   const hasProSubscription =
     (customerState?.activeSubscriptions?.length ?? 0) > 0

@@ -10,7 +10,7 @@ import {
 } from '@tanstack/react-router'
 import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 import type { TRPCOptionsProxy } from '@trpc/tanstack-react-query'
-import type { AppRouter } from '@workspace/api/router'
+import type { AppRouter } from '@workspace/api'
 import { Toaster } from '@workspace/common/ui/sonner'
 import { ThemeProvider } from 'next-themes'
 import css from '../index.css?url'

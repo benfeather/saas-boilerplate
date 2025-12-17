@@ -1,44 +1,30 @@
-import { initTRPC, TRPCError } from '@trpc/server'
-import type { Context } from '@workspace/api/context'
+import { auth } from '@workspace/auth'
+import type { Context as HonoContext } from 'hono'
+import { router } from './lib/client'
+import { adminRouter } from './routes/admin'
+import { privateRouter } from './routes/private'
+import { publicRouter } from './routes/public'
 
-export const t = initTRPC.context<Context>().create()
-
-export const router = t.router
-
-export const mergeRouters = t.mergeRouters
-
-export const publicProcedure = t.procedure
-
-export const privateProcedure = t.procedure.use(({ ctx, next }) => {
-  if (!ctx.session || !ctx.user) {
-    throw new TRPCError({
-      code: 'UNAUTHORIZED',
-      message: 'Authentication required',
-      cause: 'No session',
-    })
-  }
-
-  return next({
-    ctx: {
-      session: ctx.session,
-      user: ctx.user,
-    },
-  })
+export const appRouter = router({
+  admin: adminRouter,
+  private: privateRouter,
+  public: publicRouter,
 })
 
-export const adminProcedure = privateProcedure.use(({ ctx, next }) => {
-  if (ctx.user.role !== 'admin') {
-    throw new TRPCError({
-      code: 'UNAUTHORIZED',
-      message: 'Admin access required',
-      cause: 'Insufficient permissions',
-    })
-  }
-
-  return next({
-    ctx: {
-      session: ctx.session,
-      user: ctx.user,
-    },
+export async function createContext({ context }: CreateContextOptions) {
+  const session = await auth.api.getSession({
+    headers: context.req.raw.headers,
   })
-})
+
+  return {
+    ...session,
+  }
+}
+
+export type AppRouter = typeof appRouter
+
+export type CreateContextOptions = {
+  context: HonoContext
+}
+
+export type Context = Awaited<ReturnType<typeof createContext>>

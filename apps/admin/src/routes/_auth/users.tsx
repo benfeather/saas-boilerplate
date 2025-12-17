@@ -3,10 +3,10 @@ import { useTRPC } from '@workspace/common/lib/trpc'
 
 export const Route = createFileRoute('/_auth/users')({
   component: RouteComponent,
-  loader: async () => {
-    const trpc = useTRPC()
-    return trpc.admin.users.getAll()
-  },
+  // loader: async () => {
+  //   const trpc = useTRPC()
+  //   return trpc.admin.users.getAll()
+  // },
 })
 
 function RouteComponent() {
@@ -16,11 +16,11 @@ function RouteComponent() {
     <div>
       <h1>Users</h1>
       <ul>
-        {data.users.map((user) => (
+        {/* {data.users.map((user) => (
           <li key={user.id}>
             {user.name} ({user.email})
           </li>
-        ))}
+        ))} */}
       </ul>
     </div>
   )

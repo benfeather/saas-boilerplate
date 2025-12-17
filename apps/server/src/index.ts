@@ -1,6 +1,5 @@
 import { trpcServer } from '@hono/trpc-server'
-import { createContext } from '@workspace/api/context'
-import { appRouter } from '@workspace/api/router'
+import { appRouter, createContext } from '@workspace/api'
 import { auth } from '@workspace/auth'
 import { env } from '@workspace/env/server'
 import { Hono } from 'hono'

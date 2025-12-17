@@ -28,7 +28,7 @@ export default function SignInForm() {
         {
           onSuccess: () => {
             navigate({
-              to: '/dashboard',
+              to: '/dashboard/',
             })
 
             console.log('Sign in successful')

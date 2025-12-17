@@ -30,7 +30,7 @@ export default function SignUpForm() {
         {
           onSuccess: () => {
             navigate({
-              to: '/dashboard',
+              to: '/dashboard/',
             })
 
             console.log('Sign up successful')
