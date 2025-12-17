@@ -6,10 +6,34 @@
 		"build": "bunx --bun vite build"
 	},
 	"dependencies": {
+		"@iconify/react": "catalog:deps",
+		"@tanstack/react-form": "catalog:deps",
+		"@tanstack/react-query": "catalog:deps",
+		"@tanstack/react-router": "catalog:deps",
+		"@tanstack/react-start": "catalog:deps",
+		"@tanstack/react-table": "catalog:deps",
 		"@workspace/api": "workspace:*",
 		"@workspace/auth": "workspace:*",
-		"@workspace/config": "workspace:*",
 		"@workspace/common": "workspace:*",
-		"@workspace/env": "workspace:*"
+		"@workspace/env": "workspace:*",
+		"next-themes": "catalog:deps",
+		"react": "catalog:deps",
+		"react-dom": "catalog:deps",
+		"tailwind-merge": "catalog:deps",
+		"tailwind-variants": "catalog:deps",
+		"tailwindcss": "catalog:deps",
+		"tw-animate-css": "catalog:deps"
+	},
+	"devDependencies": {
+		"@tailwindcss/vite": "catalog:dev",
+		"@tanstack/devtools-vite": "catalog:dev",
+		"@tanstack/react-devtools": "catalog:dev",
+		"@tanstack/react-form-devtools": "catalog:dev",
+		"@tanstack/react-query-devtools": "catalog:dev",
+		"@tanstack/react-router-devtools": "catalog:dev",
+		"@vitejs/plugin-react": "catalog:dev",
+		"@workspace/config": "workspace:*",
+		"vite": "catalog:dev",
+		"vite-tsconfig-paths": "catalog:dev"
 	}
 }

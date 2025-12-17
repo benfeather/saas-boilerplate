@@ -17,7 +17,15 @@
 		"db:migrate": "drizzle-kit migrate"
 	},
 	"dependencies": {
+		"@workspace/env": "workspace:*",
+		"drizzle-orm": "^0.45.1",
+		"pg": "^8.16.3"
+	},
+	"devDependencies": {
 		"@workspace/config": "workspace:*",
-		"@workspace/env": "workspace:*"
+		"drizzle-kit": "^0.31.8"
+	},
+	"peerDependencies": {
+		"typescript": "^5"
 	}
 }

@@ -8,9 +8,17 @@
 		}
 	},
 	"dependencies": {
-		"@workspace/config": "workspace:*",
+		"@polar-sh/better-auth": "catalog:deps",
+		"@polar-sh/sdk": "catalog:deps",
 		"@workspace/db": "workspace:*",
 		"@workspace/email": "workspace:*",
-		"@workspace/env": "workspace:*"
+		"@workspace/env": "workspace:*",
+		"better-auth": "catalog:deps"
+	},
+	"devDependencies": {
+		"@workspace/config": "workspace:*"
+	},
+	"peerDependencies": {
+		"typescript": "^5"
 	}
 }

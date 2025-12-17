@@ -8,6 +8,14 @@
 		}
 	},
 	"dependencies": {
+		"@dotenvx/dotenvx": "^1.51.2",
+		"@t3-oss/env-core": "^0.13.10",
+		"zod": "catalog:deps"
+	},
+	"devDependencies": {
 		"@workspace/config": "workspace:*"
+	},
+	"peerDependencies": {
+		"typescript": "^5"
 	}
 }

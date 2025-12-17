@@ -23,8 +23,31 @@
 		}
 	},
 	"dependencies": {
+		"@base-ui/react": "^1.0.0",
+		"@fontsource-variable/inter": "^5.2.8",
+		"@iconify/react": "catalog:deps",
+		"@polar-sh/better-auth": "catalog:deps",
+		"@tanstack/react-query": "catalog:deps",
+		"@trpc/client": "catalog:deps",
+		"@trpc/tanstack-react-query": "catalog:deps",
 		"@workspace/api": "workspace:*",
-		"@workspace/config": "workspace:*",
-		"@workspace/env": "workspace:*"
+		"@workspace/env": "workspace:*",
+		"better-auth": "catalog:deps",
+		"cmdk": "^1.1.1",
+		"next-themes": "catalog:deps",
+		"react": "catalog:deps",
+		"react-dom": "catalog:deps",
+		"shadcn": "^3.6.1",
+		"sonner": "^2.0.7",
+		"tailwind-merge": "catalog:deps",
+		"tailwind-variants": "catalog:deps",
+		"tailwindcss": "catalog:deps",
+		"tw-animate-css": "catalog:deps"
+	},
+	"devDependencies": {
+		"@workspace/config": "workspace:*"
+	},
+	"peerDependencies": {
+		"typescript": "^5"
 	}
 }

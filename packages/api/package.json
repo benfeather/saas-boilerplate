@@ -14,8 +14,14 @@
 		}
 	},
 	"dependencies": {
+		"@trpc/client": "catalog:deps",
+		"@trpc/server": "catalog:deps",
 		"@workspace/auth": "workspace:*",
-		"@workspace/config": "workspace:*",
-		"@workspace/db": "workspace:*"
+		"@workspace/db": "workspace:*",
+		"hono": "catalog:deps",
+		"zod": "catalog:deps"
+	},
+	"devDependencies": {
+		"@workspace/config": "workspace:*"
 	}
 }

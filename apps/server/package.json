@@ -7,9 +7,13 @@
 		"dev": "bun run --hot src/index.ts"
 	},
 	"dependencies": {
+		"@hono/trpc-server": "^0.4.1",
 		"@workspace/api": "workspace:*",
 		"@workspace/auth": "workspace:*",
-		"@workspace/config": "workspace:*",
-		"@workspace/env": "workspace:*"
+		"@workspace/env": "workspace:*",
+		"hono": "catalog:deps"
+	},
+	"devDependencies": {
+		"@workspace/config": "workspace:*"
 	}
 }
