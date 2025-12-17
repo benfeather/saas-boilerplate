@@ -138,6 +138,7 @@
         "@iconify/react": "catalog:deps",
         "@polar-sh/better-auth": "catalog:deps",
         "@tanstack/react-query": "catalog:deps",
+        "@tanstack/react-table": "catalog:deps",
         "@trpc/client": "catalog:deps",
         "@trpc/tanstack-react-query": "catalog:deps",
         "@workspace/api": "workspace:*",
