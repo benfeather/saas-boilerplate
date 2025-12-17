@@ -4,10 +4,8 @@
 	"packageManager": "bun@1.3.4",
 	"scripts": {
 		"build": "turbo build",
+		"check": "turbo check",
 		"dev": "turbo dev",
-		"dev:admin": "turbo --filter='@workspace/server' --filter='@workspace/admin' dev",
-		"dev:email": "turbo --filter='@workspace/email' dev",
-		"dev:web": "turbo --filter='@workspace/server' --filter='@workspace/web' dev",
 		"db:push": "turbo --filter='@workspace/db' db:push",
 		"db:studio": "turbo --filter='@workspace/db' db:studio",
 		"db:generate": "turbo --filter='@workspace/db' db:generate",

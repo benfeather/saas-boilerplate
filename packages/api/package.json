@@ -2,17 +2,6 @@
 	"name": "@workspace/api",
 	"version": "1.0.0",
 	"type": "module",
-	"exports": {
-		".": {
-			"default": "./src/index.ts"
-		},
-		"./context": {
-			"default": "./src/context.ts"
-		},
-		"./router": {
-			"default": "./src/router/index.ts"
-		}
-	},
 	"dependencies": {
 		"@trpc/client": "catalog:deps",
 		"@trpc/server": "catalog:deps",

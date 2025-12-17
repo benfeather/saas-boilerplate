@@ -3,7 +3,8 @@
 	"type": "module",
 	"scripts": {
 		"dev": "bunx --bun vite dev",
-		"build": "bunx --bun vite build"
+		"build": "bunx --bun vite build",
+		"check": "bunx --bun tsc --noEmit"
 	},
 	"dependencies": {
 		"@iconify/react": "catalog:deps",

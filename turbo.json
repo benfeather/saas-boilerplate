@@ -6,21 +6,20 @@
 			"dependsOn": ["^build"],
 			"inputs": ["$TURBO_DEFAULT$", ".env*"]
 		},
+		"check": {
+			"cache": false
+		},
 		"db:push": {
-			"cache": false,
-			"persistent": true
+			"cache": false
 		},
 		"db:studio": {
-			"cache": false,
-			"persistent": true
+			"cache": false
 		},
 		"db:migrate": {
-			"cache": false,
-			"persistent": true
+			"cache": false
 		},
 		"db:generate": {
-			"cache": false,
-			"persistent": true
+			"cache": false
 		},
 		"dev": {
 			"cache": false,
