@@ -57,5 +57,19 @@
 	],
 
 	"tailwindCSS.classFunctions": ["cn", "cnMerge", "cx", "tv"],
-	"tailwindCSS.colorDecorators": true
+	"tailwindCSS.colorDecorators": true,
+
+	// Version Lens
+	"versionlens.npm.dependencyProperties": [
+		"version",
+		"packageManager",
+		"dependencies",
+		"devDependencies",
+		"peerDependencies",
+		"optionalDependencies",
+		"overrides",
+		"overrides.*",
+		"workspaces.catalog",
+		"workspaces.catalogs.*"
+	]
 }
